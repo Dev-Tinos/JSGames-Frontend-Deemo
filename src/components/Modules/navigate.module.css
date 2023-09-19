@@ -1,0 +1,27 @@
+.nav_container{
+    width: 300px;
+    height: 920px;
+    border-radius: 15px;
+    background-color: #FAFAFA;
+    display: block;
+    padding: 48px 30px 0 30px;
+}
+
+.list_container{
+    list-style-type: none;
+    margin-top: 132px;
+}
+.list_container li{
+    list-style-type: none;
+    padding: 10px 36px 10px 18px;
+    font-size: 16px;
+    margin-top: 20px;
+    width: 240px;
+    height: 41px;
+}
+.list_container li:hover{
+    background-color: #F3C745;
+    width: 240px;
+    height: 41px;
+    border-radius: 15px;
+}

@@ -1,0 +1,16 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+.app_container{
+    display: flex;
+    width: 1440px;
+    height: 1024px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 52px;
+    background-color: #DACBCB;
+    padding: 52px 40px 52px 36px;
+    border: 1px solid;
+}
