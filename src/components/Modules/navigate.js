@@ -30,6 +30,9 @@ function Navitage() {
                     <li>
                         머시기머시기
                     </li>
+                    <li>
+                        안녕 클래오 파트라
+                    </li>
                 </ul>
             </div>
         </div>
