@@ -1,0 +1,12 @@
+.boxContainer{
+    width: 540px;
+    height: 70px;
+    background-color: transparent;
+    position: absolute;
+}
+
+.searchbtn{
+    position: absolute;
+    top: 20px;
+    right: 30px;
+}

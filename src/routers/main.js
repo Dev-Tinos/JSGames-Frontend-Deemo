@@ -1,11 +1,11 @@
+import MainPage from "../components/Templetes/mainPage";
 
-function MainPage(){
+function Main(){
     return  (
         <div>
-            <h1>메인 페이지</h1>
-
+            <MainPage />
         </div>
     )
 }
 
-export default MainPage;
+export default Main;

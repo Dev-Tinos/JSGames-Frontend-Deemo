@@ -1,0 +1,24 @@
+
+
+.searchBox_position{
+    left: 336px;
+    position: relative;
+}
+
+.banner_position{
+    margin-top: 109px;
+    margin-left: 42px;
+}
+
+.game_container {
+    margin-top: 35px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 42px;
+}
+
+.gameBox_item {
+    width: 25%;
+}
