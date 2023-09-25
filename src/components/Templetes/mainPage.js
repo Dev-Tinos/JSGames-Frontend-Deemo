@@ -7,7 +7,6 @@ import GameBox from "../Atoms/gameBox"
 function MainPage() {
     return (
         <div>
-
             <div style={{ display: "flex" }}>
                 <div className={styless.searchBox_position}>
                     <Searchbox />
@@ -16,13 +15,10 @@ function MainPage() {
                 <div className={styless.banner_position}>
                     <Banner />
                     <div className={styless.game_container}>
-                        <GameBox className="gameBox_item" />
-                        <GameBox className="gameBox_item" />
-                        <GameBox className="gameBox_item" />
-                        <GameBox className="gameBox_item" />
-                        <GameBox className="gameBox_item" />
-                        <GameBox className="gameBox_item" />
-                        <GameBox className="gameBox_item" />
+                    <GameBox className="gameBox_item" />
+                    <GameBox className="gameBox_item" />
+                    <GameBox className="gameBox_item" />
+                    <GameBox className="gameBox_item" />
                     </div>
                 </div>
             </div>

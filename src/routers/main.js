@@ -1,10 +1,8 @@
 import MainPage from "../components/Templetes/mainPage";
 
-function Main(){
-    return  (
-        <div>
-            <MainPage />
-        </div>
+function Main() {
+    return (
+        <MainPage />
     )
 }
 

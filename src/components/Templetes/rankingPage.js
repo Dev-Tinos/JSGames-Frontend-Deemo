@@ -1,6 +1,5 @@
 import Navitage from "../Modules/navigate";
-
-
+import RankingBox from "../Modules/rankingBox";
 
 function RankingPage(){
 
@@ -9,6 +8,8 @@ function RankingPage(){
 
             <div style={{ display: "flex" }}>
                 <Navitage />
+                <RankingBox />
+
             </div>
 
         </div>

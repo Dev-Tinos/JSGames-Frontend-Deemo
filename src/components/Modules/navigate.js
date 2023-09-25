@@ -1,12 +1,14 @@
 import { useNavigate } from "react-router-dom"
 import styless from "./navigate.module.css"
+import LogoImg from "../Atoms/logoImg";
 
 function Navitage() {
     const nav = useNavigate();
     return (
         <div className={styless.nav_container}>
+
             <div>
-                <h1>로고 머시기</h1>
+                <LogoImg />
             </div>
             <div className={styless.list_container}>
                 <p>List</p>
