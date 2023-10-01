@@ -3,7 +3,7 @@ function Nickname({name}){
         <h1 style={{
             fontSize: "16px",
             color: "black"
-        }}>땃쥐</h1>
+        }}>땃쥐 : </h1>
     )
 }
 

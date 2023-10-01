@@ -9,7 +9,6 @@ function RankingPage(){
             <div style={{ display: "flex" }}>
                 <Navitage />
                 <RankingBox />
-
             </div>
 
         </div>
