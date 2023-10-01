@@ -1,6 +1,6 @@
 import RankingNum from "../Atoms/rankingNum";
 import Nickname from "../Atoms/nickname";
-import Medal_list from "../Atoms/medal_list";
+import MedalList from "../Atoms/medal_list";
 
 function RankingBox() {
     return (
@@ -9,7 +9,7 @@ function RankingBox() {
         }}>
             <RankingNum />
             <Nickname />
-            <Medal_list />
+            <MedalList />
         </div>
     )
 }
