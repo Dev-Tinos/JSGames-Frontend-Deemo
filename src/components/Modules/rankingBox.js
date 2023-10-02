@@ -5,7 +5,11 @@ import MedalList from "../Atoms/medal_list";
 function RankingBox() {
     return (
         <div style={{
-            display: "flex", alignItems: "center"
+            display: "flex", alignItems: "center",
+            width: "1006px",
+            height: "686px",
+            backgroundColor: "#FAFAFA",
+            borderRadius: "15px",
         }}>
             <RankingNum />
             <Nickname />

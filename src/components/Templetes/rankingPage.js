@@ -1,16 +1,19 @@
 import Navitage from "../Modules/navigate";
 import RankingBox from "../Modules/rankingBox";
+import CategoryBox from "../Modules/categoryBox";
 
-function RankingPage(){
+function RankingPage() {
 
     return (
         <div>
 
             <div style={{ display: "flex" }}>
                 <Navitage />
-                <RankingBox />
+                <div>
+                    <CategoryBox />
+                    <RankingBox />
+                </div>
             </div>
-
         </div>
     )
 }

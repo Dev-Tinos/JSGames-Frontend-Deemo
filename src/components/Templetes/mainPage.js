@@ -11,7 +11,7 @@ function MainPage() {
                 <div className={styless.searchBox_position}>
                     <Searchbox />
                 </div>
-                <Navitage />
+                <Navitage />    
                 <div className={styless.banner_position}>
                     <Banner />
                     <div className={styless.game_container}>
