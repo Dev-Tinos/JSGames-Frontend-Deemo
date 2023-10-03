@@ -4,7 +4,7 @@ function Subheading({ contents }) {
             fontSize: "36px",
             marginTop: "24px",
             marginBottom: "12px",
-            marginLeft: "16px"
+            marginLeft: "16px",
         }}>{contents}</h2>
 
     )
