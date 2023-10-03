@@ -22,9 +22,6 @@ function Navitage() {
                     <li onClick={()=> nav('/myPage')}>
                         마이페이지
                     </li>
-                    <li>
-                        커뮤니티
-                    </li>
                 </ul>
             </div>
         </div>

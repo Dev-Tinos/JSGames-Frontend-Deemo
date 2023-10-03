@@ -1,9 +1,9 @@
 function Nickname({name}){
     return(
         <h1 style={{
-            fontSize: "16px",
+            fontSize: "32px",
             color: "black"
-        }}>땃쥐 : </h1>
+        }}>땃쥐</h1>
     )
 }
 

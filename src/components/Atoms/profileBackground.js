@@ -1,7 +1,7 @@
 function ProfileBackground() {
     return (
         <div style={{
-            position: "absolute",
+            position: "relative",
         }}>
             <div style={{
                 width: "257px",
@@ -11,7 +11,6 @@ function ProfileBackground() {
                 left: "434px",
                 top: "128px",
                 position: "absolute",
-
             }}>
             </div>
             <div style={{
@@ -26,8 +25,6 @@ function ProfileBackground() {
             </div>
         </div>
     )
-
-
 }
 
 export default ProfileBackground;

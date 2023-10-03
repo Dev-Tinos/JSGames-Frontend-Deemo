@@ -1,0 +1,19 @@
+.wrapper {
+    position: relative;
+}
+
+.recordBoxPosition {
+    position: absolute;
+    top: 450px;
+    left: 480px;
+}
+
+.informationPosition{
+    position: absolute;
+    width: 300px;
+    height: 200px;
+    text-align: center;
+    top: 600px;
+    left: 120px;
+    line-height: 60px;
+}

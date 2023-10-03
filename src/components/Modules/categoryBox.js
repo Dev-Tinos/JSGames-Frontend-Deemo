@@ -8,7 +8,6 @@ function CategoryBox(){
             backgroundColor: "#FAFAFA",
             borderRadius: "15px",
         }}>
-
         </div>
     )
 }

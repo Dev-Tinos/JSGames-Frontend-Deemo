@@ -7,7 +7,8 @@ function RankingNum({ num }) {
             backgroundColor: "#FAFAFA",
             display: "flex",
             justifyContent: "center",
-            alignItems: "center"
+            alignItems: "center",
+            fontSize: "36px"
         }}>
             <p>1</p>
         </div >

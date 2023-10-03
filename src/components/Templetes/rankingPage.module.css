@@ -1,0 +1,13 @@
+.contain_position{
+    margin-left: 42px;
+}
+
+.ranking_box{
+    margin-top: 46px;
+    width: 1006px;
+    height: 694px;
+    border-radius: 15px;
+    background-color: #FAFAFA;
+    padding: 50px 0 0 67px;
+    overflow: scroll;
+}

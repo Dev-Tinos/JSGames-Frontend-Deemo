@@ -1,10 +1,7 @@
 import Navitage from "../Modules/navigate";
 import ProfileBox from "../Modules/profileBox";
 
-
-
-function RankingPage(){
-
+function RankingPage() {
     return (
         <div>
             <div style={{ display: "flex" }}>
