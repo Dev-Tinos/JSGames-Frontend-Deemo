@@ -1,9 +1,15 @@
-*{
+* {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
-.app_container{
+
+body {
+    background-color: #E7EDF7;
+
+}
+
+.app_container {
     display: flex;
     width: 1440px;
     height: 1024px;

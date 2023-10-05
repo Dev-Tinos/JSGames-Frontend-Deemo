@@ -20,6 +20,11 @@ function RankingPage() {
                         <RankingBox />
                         <RankingBox />
                         <RankingBox />
+                        <RankingBox />
+                        <RankingBox />
+                        <RankingBox />
+                        <RankingBox />
+                        <RankingBox />
                     </div>
                 </div>
             </div>
