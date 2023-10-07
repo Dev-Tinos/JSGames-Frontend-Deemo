@@ -1,12 +1,14 @@
 import Navitage from "../Modules/navigate";
-import ProfileBox from "../Modules/profileBox";
+import SelectMy from "../Modules/selectMy";
 
 function RankingPage() {
     return (
         <div>
             <div style={{ display: "flex" }}>
                 <Navitage />
-                <ProfileBox />
+                <div>
+                    <SelectMy/>
+                </div>
             </div>
         </div>
     )
