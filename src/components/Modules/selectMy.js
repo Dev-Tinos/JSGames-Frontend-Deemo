@@ -2,11 +2,7 @@ import React, { useState } from 'react';
 
 function SelectMy() {
     const [index, setIndex] = useState(1);
-    const messages = {
-        messageBox: [
-            // 샘플 데이터를 여기에 추가...
-        ]
-    };
+    
 
     return (
         <div>
