@@ -4,7 +4,6 @@ function RankingNum({ num }) {
             width: "50px",
             height: "50px",
             borderRadius: "50%",
-            backgroundColor: "#FAFAFA",
             display: "flex",
             justifyContent: "center",
             alignItems: "center",

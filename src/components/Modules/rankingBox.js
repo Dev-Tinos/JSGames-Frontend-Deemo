@@ -11,7 +11,6 @@ function RankingBox() {
             display: "flex", alignItems: "center",
             position: "relative",
             marginBottom: "16px"
-
         }}>
             <RankingNum />
             <span className={styless.imgPosition}>
