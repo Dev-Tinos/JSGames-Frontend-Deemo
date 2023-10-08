@@ -6,15 +6,21 @@ import styless from "./detailPage.module.css"
 import Subheading from "../Atoms/subheading";
 import TopPosition from "../Modules/topPosition";
 import CommentBox from "../Modules/commentBox";
+import GameTitle from "../Atoms/gameTitle";
 
-function DetailPage() {
+function DetailPage({gameName, description}) {
     return (
         <div>
             <div style={{ display: "flex" }}>
                 <Navitage />
                 <div className={styless.game_position}>
+                    <GameTitle 
+                    gameName={gameName}
+                    />
                     <PlayGame />
-                    <GameDescription />
+                    <GameDescription 
+                        description={description}
+                    />
 
                     <Subheading contents={"Top 3"} />
 

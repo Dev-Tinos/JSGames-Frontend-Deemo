@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 function GameBox({ gameId, gameName }) {
     return (
 
-        <Link to={`/gamebox/${gameId}`}>
+        <Link to={`/gamebox/${gameId}`} style={{ textDecoration: 'none' }}>
             <div style={{
                 width: "220px",
                 height: "220px",
@@ -11,7 +11,7 @@ function GameBox({ gameId, gameName }) {
                 backgroundColor: "#FAFAFA",
                 display: "flex",
                 alignItems: "center",
-                justifyContent:"center",
+                justifyContent: "center",
                 fontSize: "20px",
                 color: "black"
             }}>

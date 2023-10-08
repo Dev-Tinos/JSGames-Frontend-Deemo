@@ -16,6 +16,7 @@ jobs:
       - name: Build
         env:
           REACT_APP_GAME_CONTROLLER: ${{ secrets.REACT_APP_GAME_CONTROLLER }}
+          REACT_APP_GAME_DETAIL: ${{ secrets.REACT_APP_GAME_DETAIL }}
         run: npm run build
         
       - name: Deploy 
