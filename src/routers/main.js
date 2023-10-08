@@ -7,7 +7,7 @@ function Main() {
     const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
-        const gameData = process.env.REACT_APP_Game_game_controller;
+        const gameData = process.env.REACT_APP_GAME_CONTROLLER;
         const page = 0;
         const size = 3;
         const fetchData = async () => {
