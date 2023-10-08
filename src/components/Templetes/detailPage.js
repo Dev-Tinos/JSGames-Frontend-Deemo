@@ -5,6 +5,7 @@ import Comment from "../Modules/comment";
 import styless from "./detailPage.module.css"
 import Subheading from "../Atoms/subheading";
 import TopPosition from "../Modules/topPosition";
+import CommentBox from "../Modules/commentBox";
 
 function DetailPage() {
     return (
@@ -15,7 +16,13 @@ function DetailPage() {
                     <PlayGame />
                     <GameDescription />
 
+                    <Subheading contents={"Top 3"} />
+
+                    <div className={styless.topBox}>
+                        <TopPosition />
+                    </div>
                     <Subheading contents={"댓글"} />
+                    <CommentBox />
                     <div className={styless.commentBox}>
                         <Comment />
                         <Comment />
@@ -29,11 +36,7 @@ function DetailPage() {
                         <Comment />
                         <Comment />
                     </div>
-                    <Subheading contents={"Top 3"} />
 
-                    <div className={styless.topBox}>
-                        <TopPosition />
-                    </div>
                 </div>
             </div>
         </div>

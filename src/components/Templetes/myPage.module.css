@@ -1,0 +1,37 @@
+.profileBox{
+    width: 1006px;
+    height: 670px;
+    margin-left: 42px;
+    border-radius: 15px;
+    background-color: #FAFAFA;
+    margin-top: auto;
+    margin-bottom: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.alarm_list span{
+    font-size: 24px;
+    margin-right: 6px;
+}
+
+.informationBox{
+    width: 684px;
+    height: 392px;
+    border: 2px solid #B1C9F1;
+    border-radius: 30px;
+    margin-top: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.alarm_list span {
+    color: gray;
+    cursor: pointer;
+    padding: 5px;
+    transition: color 0.3s;
+}
+.alarm_list .selected {
+    color: #B1C9F1;
+}

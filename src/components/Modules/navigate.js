@@ -11,7 +11,7 @@ function Navitage() {
     return (
         <div className={styless.nav_container}>
 
-            <div>
+            <div className={styless.logoPostion}>
                 <LogoImg />
             </div>
             <div className={styless.list_container}>

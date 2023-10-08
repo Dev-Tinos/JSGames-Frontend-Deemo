@@ -1,16 +1,12 @@
 .game_position{
     margin-left: 42px;
     width: 1006px;
-    height: 920px;
-    overflow: scroll;
 }
 
 .commentBox{
     width: 1006px;
-    height: 500px;
     background-color: #FAFAFA;
     border-radius: 15px;
-    overflow: scroll;
 }
 
 .topBox{

@@ -27,6 +27,7 @@ function RankingPage() {
                         <RankingBox />
                     </div>
                 </div>
+
             </div>
         </div>
     )

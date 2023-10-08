@@ -1,10 +1,17 @@
+.logoPostion{
+    display: flex;
+    justify-content: center;
+}
+
 .nav_container{
     width: 300px;
     height: 920px;
     border-radius: 15px;
     background-color: #FAFAFA;
-    display: block;
+    position: sticky;
     padding: 48px 30px 0 30px;
+    top: 4%;
+
 }
 
 .list_container{

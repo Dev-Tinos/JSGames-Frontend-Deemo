@@ -1,0 +1,9 @@
+.imputBox{
+    width: 1006px;
+    height: 220px;
+    background-color: #FAFAFA;
+    border-radius: 15px;
+    margin-bottom: 24px;
+    padding: 20px 22px 8px 22px;
+    text-align: right;
+}
