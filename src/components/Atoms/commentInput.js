@@ -21,6 +21,7 @@ function CommentInput() {
                 resize: "none",
                 border: "2px solid #B1C9F1"
             }}
+            value={value}
         />
     )
 }
