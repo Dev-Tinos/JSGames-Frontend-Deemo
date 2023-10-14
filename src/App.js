@@ -10,7 +10,6 @@ import MyPage from "./routers/profile"
 import Ranking from "./routers/ranking"
 import Test from "./routers/test"
 import Detail from "./routers/detail"
-import Signup from "./routers/signup"
 
 function App() {
   return (
