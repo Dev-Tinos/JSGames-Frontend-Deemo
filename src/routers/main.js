@@ -24,12 +24,11 @@ function Main() {
         return <div>Loading...</div>;
     }
     return (
-        <div>
+        <div>   
             <MainPage
                 gameData={data}
             />
         </div>
-
     )
 }
 

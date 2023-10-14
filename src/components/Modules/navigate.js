@@ -18,13 +18,16 @@ function Navitage() {
                 <p>List</p>
                 <ul>
                     <li onClick={() => nav('/')}>
-                        Main
+                        홈
                     </li>
                     <li onClick={() => nav('/ranking')}>
-                        Ranking
+                        랭킹
                     </li>
                     <li onClick={() => nav('/myPage')}>
                         마이페이지
+                    </li>
+                    <li onClick={() => nav('/signup')}>
+                        회원가입
                     </li>
                     <li onClick={() => setLoginOpen(true)}>
                         로그인
