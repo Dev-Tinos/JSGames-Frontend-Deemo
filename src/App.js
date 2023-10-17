@@ -10,6 +10,7 @@ import MyPage from "./routers/profile"
 import Ranking from "./routers/ranking"
 import Test from "./routers/test"
 import Detail from "./routers/detail"
+import Signup from "./routers/signup"
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route path="/" element={<Home />}></Route>
           <Route path="/myPage" element={<MyPage />}></Route>
           <Route path="/ranking" element={<Ranking />}></Route>
+          <Route path="/signup" element={<Signup />}></Route>
           <Route path="/test" element={<Test />}></Route>
           
           <Route path="/gamebox/:gameId" element={<Detail />}></Route>

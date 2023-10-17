@@ -22,17 +22,9 @@ function Profile() {
     }
     return (
         <div>
-            {userData && (
-                <div>
-                    <p>User ID: {userData.userId}</p>
-                    <p>Nickname: {userData.nickname}</p>
-                    <p>Email: {userData.email}</p>
-                    <p>Password: {userData.password}</p>
-                    <p>Major: {userData.major}</p>
-                </div>
-            )}
-            <MyPage />
-
+            <MyPage
+                information={userData}
+            />
         </div>
     )
 }

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import styles from './signupPage.module.css'; // 수정된 부분
+import styless from './signupPage.module.css'; // 수정된 부분
 import Navitage from "../Modules/navigate";
 
 function SignupPage() {
@@ -17,11 +17,9 @@ function SignupPage() {
             [name]: value
         });
     };
-
     const handleSubmit = (e) => {
         e.preventDefault();
-
-        fetch(process.env.REACT_APP_SIGNUP_ENDPOINT, {
+        fetch(process.env.REACT_APP_SIGNUP, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -29,69 +27,61 @@ function SignupPage() {
             body: JSON.stringify(formData)
         })
             .then(response => response.json())
-            .then(data => {
-                if (data.success) {
-                    alert("회원가입이 완료되었습니다!");
-                } else {
-                    alert("회원가입 실패. 다시 시도해주세요.");
-                }
-            })
+            .then(alert("회원가입이 완료되었습니다!"))
             .catch(error => {
                 console.error("Error:", error);
             });
     };
-
     return (
         <div>
             <div style={{ display: "flex" }}>
                 <Navitage />
-
-                <form onSubmit={handleSubmit} className={styles['signup-form']}>
-                    <div className={styles['form-group']}>
-                        <label className={styles.label}>Email:</label>
+                <form onSubmit={handleSubmit} className={styless.signup_form}>
+                    <div className={styless.form_group}>
+                        <label className={styless.label}>Email:</label>
                         <input
                             type="email"
                             name="email"
                             value={formData.email}
                             onChange={handleChange}
                             required
-                            className={styles.input}
+                            className={styless.input}
                         />
                     </div>
-                    <div className={styles['form-group']}>
-                        <label className={styles.label}>Password:</label>
+                    <div className={styless.form_group}>
+                        <label className={styless.label}>Password:</label>
                         <input
                             type="password"
                             name="password"
                             value={formData.password}
                             onChange={handleChange}
                             required
-                            className={styles.input}
+                            className={styless.input}
                         />
                     </div>
-                    <div className={styles['form-group']}>
-                        <label className={styles.label}>Nickname:</label>
+                    <div className={styless.form_group}>
+                        <label className={styless.label}>Nickname:</label>
                         <input
                             type="text"
                             name="nickname"
                             value={formData.nickname}
                             onChange={handleChange}
                             required
-                            className={styles.input}
+                            className={styless.input}
                         />
                     </div>
-                    <div className={styles['form-group']}>
-                        <label className={styles.label}>Major:</label>
+                    <div className={styless.form_group}>
+                        <label className={styless.label}>Major:</label>
                         <input
                             type="text"
                             name="major"
                             value={formData.major}
                             onChange={handleChange}
                             required
-                            className={styles.input}
+                            className={styless.input}
                         />
                     </div>
-                    <button type="submit" className={`${styles['submit-btn']} ${styles['custom-btn']}`}>회원가입</button>
+                    <button type="submit" className={styless.submit_btn}>회원가입</button>
                 </form>
             </div>
         </div>

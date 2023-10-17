@@ -1,22 +1,20 @@
 import Navitage from "../Modules/navigate";
 import styless from "./myPage.module.css"
-import CategorySelection from "../Modules/categorySelection";
 
-function RankingPage() {
+function RankingPage({ information }) {
 
     return (
         <div>
             <div style={{ display: "flex" }}>
                 <Navitage />
                 <div className={styless.profileBox}>
-                    <CategorySelection
-                        category1="내 정보"
-                        category2="Record"
-                        data1="내 정보 데이터"
-                        data2="Record 데이터"
-                        width="764"
-                        height="456"
-                    />
+                    <div>
+                        <p>User ID: {information.userId}</p>
+                        <p>Nickname: {information.nickname}</p>
+                        <p>Email: {information.email}</p>
+                        <p>Password: {information.password}</p>
+                        <p>Major: {information.major}</p>
+                    </div>
                 </div>
             </div>
         </div>

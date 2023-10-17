@@ -20,6 +20,7 @@ jobs:
           REACT_APP_USERID: ${{ secrets.REACT_APP_USERID }}
           REACT_APP_GAMEID_RESULT: ${{ secrets.REACT_APP_GAMEID_RESULT }}
           REACT_APP_GAMEID_COMMENT: ${{ secrets.REACT_APP_GAMEID_COMMENT }}
+          REACT_APP_SIGNUP: ${{ secrets.REACT_APP_SIGNUP }}
         run: npm run build
         
       - name: Deploy 

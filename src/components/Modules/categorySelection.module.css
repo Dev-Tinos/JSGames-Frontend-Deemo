@@ -4,7 +4,7 @@
 }
 
 .informationBox {
-    min-height: 456px;
+    min-height: 780px;
     border: 2px solid #B1C9F1;
     border-radius: 30px;
     margin-top: 16px;
@@ -20,4 +20,23 @@
 
 .category .selected {
     color: #B1C9F1;
+}
+
+.list_box{
+    margin-bottom: 32px;
+}
+.ranking_text{
+    font-size: 26px;
+}
+.profile_text{
+    font-size: 26px;
+    margin-left: 66px;
+}
+.nickname_text{
+    font-size: 26px;
+    margin-left: 58px;
+}
+.message_text{
+    font-size: 26px;
+    margin-left: 200px;
 }

@@ -44,24 +44,9 @@ function Detail() {
 
     return (
         <div>
-            {gameResult.map((result, index) => (
-                <div key={index}>
-                    <p>Result ID: {result.resultId}</p>
-                    <p>Game ID: {result.gameId}</p>
-                    <p>User ID: {result.userId}</p>
-                    <p>Game Score: {result.gameScore}</p>
-                </div>
-            ))}
-            {gameComment.map((result, index) => (
-                <div key={index}>
-                    <p>Comment ID: {result.commentId}</p>
-                    <p>Game ID: {result.gameId}</p>
-                    <p>User ID: {result.userId}</p>
-                    <p>Comment Content: {result.commentContent}</p>
-                    <p>Comment Time: {result.dateTime}</p>
-                </div>
-            ))}
             <DetailPage
+                gameResult={gameResult}
+                gameComment={gameComment}
                 gameName={gameData.gameName}
                 description={gameData.description}
             />
