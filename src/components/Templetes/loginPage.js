@@ -9,6 +9,9 @@ function LoginPage({ isOpen, onClose }) {
     const handleSubmit = (e) => {
         e.preventDefault();
     }
+    const handleInputClick = (e) => {
+        e.stopPropagation();
+    }
     if (!isOpen) return null;
 
     return (
@@ -20,6 +23,7 @@ function LoginPage({ isOpen, onClose }) {
                     className={styless.login_input}
                     value={email}
                     onChange={e => setEmail(e.target.value)}
+                    onClick={handleInputClick}
                 />
                 <input
                     type="password"
@@ -27,6 +31,8 @@ function LoginPage({ isOpen, onClose }) {
                     className={styless.login_input}
                     value={password}
                     onChange={e => setPassword(e.target.value)}
+                    onClick={handleInputClick} 
+
                 />
                 <button type="submit" className={styless.login_button}>
                     로그인

@@ -3,11 +3,9 @@ import RankingBox from "../Modules/rankingBox";
 import styless from "./rankingPage.module.css"
 import CategorySelection from "../Modules/categorySelection";
 
-function RankingPage() {
-
+function RankingPage({userRanking, gameRanking}) {
     return (
         <div>
-
             <div style={{ display: "flex" }}>
                 <Navitage />
                 <div className={styless.contain_position}>
@@ -18,7 +16,7 @@ function RankingPage() {
                             data1={
                                 <RankingBox />
                             }
-                            data2="게임 랭킹"
+                            data2={gameRanking}
                             width="880"
                         />
                     </div>

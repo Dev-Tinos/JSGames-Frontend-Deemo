@@ -43,7 +43,15 @@ function CategorySelection({ category1, category2, data1, data2, width, height }
                         height: `${height}px`,
                     }}
                 >
-                    <p>{data2}</p>
+                    <div className={styless.list_box}>
+                        <span className={styless.ranking_text}>순위</span>
+                        <span className={styless.profile_text}>게임 이름</span>
+                    </div>
+                    <p>{data2.map((game) => (
+                        <div>
+                            <h3>{game.gameName}</h3>
+                        </div>
+                    ))}</p>
                 </div>
             )}
         </div>

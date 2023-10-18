@@ -1,12 +1,12 @@
-function GameTitle({gameName}){
+function GameTitle({ gameName }) {
 
-    return(
+    return (
         <h1 style={{
             marginBottom: "32px",
             fontSize: "42px",
             textAlign: "center"
         }}>
-            "{gameName}"
+            {gameName}
         </h1>
     )
 }
