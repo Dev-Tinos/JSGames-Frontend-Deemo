@@ -7,7 +7,8 @@ function SignupPage() {
         email: "",
         password: "",
         nickname: "",
-        major: ""
+        major: "",
+        code: "",
     });
 
     const handleChange = (e) => {
@@ -16,6 +17,23 @@ function SignupPage() {
             ...formData,
             [name]: value
         });
+    };
+    const handleCodeSend = (e) => {
+        e.preventDefault();
+        fetch(process.env.REACT_APP_CERTIFICATION, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({ email: formData.email })
+        })
+            .then(response => response.json())
+            .then(() => {
+                alert("코드가 전송 되었습니다.")
+            })
+            .catch(error => {
+                console.error("Error:", error);
+            });
     };
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -38,7 +56,7 @@ function SignupPage() {
                 <Navitage />
                 <form onSubmit={handleSubmit} className={styless.signup_form}>
                     <div className={styless.form_group}>
-                        <label className={styless.label}>Email:</label>
+                        <label className={styless.label}>이메일:</label>
                         <input
                             type="email"
                             name="email"
@@ -47,9 +65,27 @@ function SignupPage() {
                             required
                             className={styless.input}
                         />
+                        <button
+                            onClick={handleCodeSend}
+                            className={styless.submit_btn}
+                            disabled={!formData.email}
+                        >
+                            코드 전송
+                        </button>
                     </div>
                     <div className={styless.form_group}>
-                        <label className={styless.label}>Password:</label>
+                        <label className={styless.label}>인증코드:</label>
+                        <input
+                            type="text"
+                            name="text"
+                            value={formData.code}
+                            onChange={handleChange}
+                            required
+                            className={styless.input}
+                        />
+                    </div>
+                    <div className={styless.form_group}>
+                        <label className={styless.label}>비밀번호:</label>
                         <input
                             type="password"
                             name="password"
@@ -60,7 +96,7 @@ function SignupPage() {
                         />
                     </div>
                     <div className={styless.form_group}>
-                        <label className={styless.label}>Nickname:</label>
+                        <label className={styless.label}>닉네임:</label>
                         <input
                             type="text"
                             name="nickname"
@@ -71,7 +107,7 @@ function SignupPage() {
                         />
                     </div>
                     <div className={styless.form_group}>
-                        <label className={styless.label}>Major:</label>
+                        <label className={styless.label}>전공:</label>
                         <input
                             type="text"
                             name="major"

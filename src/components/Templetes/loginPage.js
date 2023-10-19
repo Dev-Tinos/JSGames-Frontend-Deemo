@@ -13,7 +13,6 @@ function LoginPage({ isOpen, onClose }) {
         e.stopPropagation();
     }
     if (!isOpen) return null;
-
     return (
         <div className={styless.modal_overlay} onClick={onClose}>
             <form className={styless.login_form} onSubmit={handleSubmit}>
