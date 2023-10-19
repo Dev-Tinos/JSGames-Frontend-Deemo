@@ -77,7 +77,7 @@ function SignupPage() {
                         <label className={styless.label}>인증코드:</label>
                         <input
                             type="text"
-                            name="text"
+                            name="code"
                             value={formData.code}
                             onChange={handleChange}
                             required
