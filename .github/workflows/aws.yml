@@ -23,14 +23,13 @@ jobs:
           REACT_APP_SIGNUP: ${{ secrets.REACT_APP_SIGNUP }}
           REACT_APP_GAME_RANKING: ${{ secrets.REACT_APP_GAME_RANKING }}
           REACT_APP_CERTIFICATION: ${{ secrets.REACT_APP_CERTIFICATION }}
+          REACT_APP_LOGIN: ${{ secrets.REACT_APP_LOGIN }}
         run: npm run build
         
       - name: Deploy 
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          REACT_APP_LOGIN: ${{ secrets.REACT_APP_LOGIN }}
           AWS_EC2_METADATA_DISABLED: true
         run: |
           aws s3 sync ./build s3://deemo-games
-w
