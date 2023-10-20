@@ -4,11 +4,11 @@ import Navitage from "../Modules/navigate";
 
 function SignupPage() {
     const [formData, setFormData] = useState({
+        code: "",
         email: "",
         password: "",
         nickname: "",
         major: "",
-        code: "",
     });
 
     const handleChange = (e) => {

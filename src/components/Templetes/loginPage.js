@@ -8,9 +8,30 @@ function LoginPage({ isOpen, onClose }) {
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        fetch(process.env.REACT_APP_LOGIN, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                email: email, 
+                password: password,
+            })
+        })
+            .then(response => response.json())
+            .then(alert("로그인 완료되었습니다!"))
+            .catch(error => {
+                console.error("Error:", error);
+            });
     }
     const handleInputClick = (e) => {
         e.stopPropagation();
+    }
+    const inputEmail = (e) => {
+        setEmail(e.target.value)
+    }
+    const inputPassword = (e) => {
+        setPassword(e.target.value)
     }
     if (!isOpen) return null;
     return (
@@ -21,7 +42,7 @@ function LoginPage({ isOpen, onClose }) {
                     placeholder="Email"
                     className={styless.login_input}
                     value={email}
-                    onChange={e => setEmail(e.target.value)}
+                    onChange={inputEmail}
                     onClick={handleInputClick}
                 />
                 <input
@@ -29,9 +50,8 @@ function LoginPage({ isOpen, onClose }) {
                     placeholder="Password"
                     className={styless.login_input}
                     value={password}
-                    onChange={e => setPassword(e.target.value)}
+                    onChange={inputPassword}
                     onClick={handleInputClick} 
-
                 />
                 <button type="submit" className={styless.login_button}>
                     로그인
