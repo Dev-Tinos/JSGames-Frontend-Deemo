@@ -7,9 +7,10 @@ function Profile() {
 
     useEffect(() => {
         const myProfile = process.env.REACT_APP_USERID;
+        const userId = localStorage.getItem('userId');
         const fetchData = async () => {
             const response = await fetch(
-                `${myProfile}`
+                `${myProfile}/${userId}`
             );
             const result = await response.json();
             setuserData(result)

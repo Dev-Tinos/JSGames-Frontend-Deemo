@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
 import styless from "./loginPage.module.css"
+import { useNavigate } from "react-router-dom"
 
 
 function LoginPage({ isOpen, onClose }) {
+    const nav = useNavigate()
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -19,6 +22,17 @@ function LoginPage({ isOpen, onClose }) {
             })
         })
             .then(response => response.json())
+            .then(data => {
+                if (data.userId) {
+                    localStorage.setItem('userId', data.userId);
+                    console.log(data)
+                    alert("로그인 완료되었습니다!");
+                    onClose();
+                    nav('/')
+                } else {
+                    alert("로그인 실패. 다시 시도하세요.");
+                }
+            })
             .catch(error => {
                 console.error("Error:", error);
             });
@@ -56,7 +70,7 @@ function LoginPage({ isOpen, onClose }) {
                 >
                     로그인
                 </button>
-                
+
             </form>
         </div>
 
