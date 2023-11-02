@@ -22,7 +22,6 @@ function App() {
           <Route path="/ranking" element={<Ranking />}></Route>
           <Route path="/signup" element={<Signup />}></Route>
           <Route path="/test" element={<Test />}></Route>
-          
           <Route path="/gamebox/:gameId" element={<Detail />}></Route>
         </Routes>
       </BrowserRouter>

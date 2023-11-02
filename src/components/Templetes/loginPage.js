@@ -14,12 +14,11 @@ function LoginPage({ isOpen, onClose }) {
                 "Content-Type": "application/json"
             },
             body: JSON.stringify({
-                email: email, 
+                email: email,
                 password: password,
             })
         })
             .then(response => response.json())
-            .then(alert("로그인 완료되었습니다!"))
             .catch(error => {
                 console.error("Error:", error);
             });
@@ -51,11 +50,13 @@ function LoginPage({ isOpen, onClose }) {
                     className={styless.login_input}
                     value={password}
                     onChange={inputPassword}
-                    onClick={handleInputClick} 
+                    onClick={handleInputClick}
                 />
-                <button type="submit" className={styless.login_button}>
+                <button type="submit" className={styless.login_button} onClick={handleInputClick}
+                >
                     로그인
                 </button>
+                
             </form>
         </div>
 

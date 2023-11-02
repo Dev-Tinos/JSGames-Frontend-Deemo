@@ -5,6 +5,7 @@ function GameBox({ gameId, gameName }) {
 
         <Link to={`/gamebox/${gameId}`} style={{ textDecoration: 'none' }}>
             <div style={{
+                
                 width: "220px",
                 height: "220px",
                 borderRadius: "15px",

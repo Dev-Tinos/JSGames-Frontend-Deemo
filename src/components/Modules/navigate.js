@@ -35,6 +35,7 @@ function Navitage() {
                 </ul>
             </div>
             <LoginPage isOpen={isLoginOpen} onClose={() => setLoginOpen(false)} />
+
         </div>
     )
 }

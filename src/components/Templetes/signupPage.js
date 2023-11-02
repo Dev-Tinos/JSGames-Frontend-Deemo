@@ -25,12 +25,11 @@ function SignupPage() {
             headers: {
                 "Content-Type": "application/json"
             },
-            body: JSON.stringify({ email: formData.email })
+            body: JSON.stringify({
+                email: formData.email,
+            })
         })
             .then(response => response.json())
-            .then(() => {
-                alert("코드가 전송 되었습니다.")
-            })
             .catch(error => {
                 console.error("Error:", error);
             });
