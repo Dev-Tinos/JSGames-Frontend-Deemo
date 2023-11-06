@@ -1,8 +1,8 @@
-function PlayGame() {
+function PlayGame({gmaeSrc}) {
     return (
         <iframe
             title="Game Frame"
-            src="https://example.com/game"
+            src={gmaeSrc}
             style={{
                 width: "1006px",
                 height: "624px",

@@ -49,6 +49,7 @@ function Detail() {
                 gameComment={gameComment}
                 gameName={gameData.gameName}
                 description={gameData.description}
+                gmaeSrc={gameData.gameUrl}
             />
         </div>
     )

@@ -1,11 +1,14 @@
 .signup_form {
     width: 1006px;
-    margin: 0 auto;
-    padding: 30px;
-    border-radius: 8px;
-    margin-left: 32px;
+    height: 670px;
+    margin-left: 42px;
+    border-radius: 15px;
     background-color: #FAFAFA;
-    text-align: center;
+    margin-top: auto;
+    margin-bottom: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
 }
 

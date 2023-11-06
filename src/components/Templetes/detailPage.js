@@ -8,7 +8,7 @@ import TopPosition from "../Modules/topPosition";
 import CommentBox from "../Modules/commentBox";
 import GameTitle from "../Atoms/gameTitle";
 
-function DetailPage({ gameResult, gameComment, gameName, description }) {
+function DetailPage({ gameResult, gameComment, gameName, description,gmaeSrc }) {
     return (
         <div>
             <div style={{ display: "flex" }}>
@@ -17,7 +17,9 @@ function DetailPage({ gameResult, gameComment, gameName, description }) {
                     <GameTitle
                         gameName={gameName}
                     />
-                    <PlayGame />
+                    <PlayGame 
+                        gmaeSrc={gmaeSrc}
+                    />
                     <GameDescription
                         description={description}
                     />
