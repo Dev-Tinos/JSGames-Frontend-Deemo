@@ -2,7 +2,7 @@ import Navitage from "../Modules/navigate"
 import styless from "./mainPage.module.css"
 import Searchbox from "../Modules/searchbox"
 import Banner from "../Atoms/banner"
-import GameBox from "../Atoms/gameBox"
+import GameBox from "../Modules/gameBox"
 
 function MainPage({ gameData }) {
     return (
@@ -19,6 +19,7 @@ function MainPage({ gameData }) {
                             <GameBox
                                 gameId={gameData.gameId}
                                 gameName={gameData.gameName}
+                                viewCount = {gameData.viewCount}
                             />
                         ))}
                     </div>

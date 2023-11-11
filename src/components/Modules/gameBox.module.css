@@ -1,0 +1,26 @@
+.gameBox{
+    width: 220px;
+    height: 220px;
+    border-radius: 15px;
+    background-color: #FAFAFA;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 15px;
+    color: black;
+    position: relative;
+}
+
+.gameTitle{
+    margin-top: 12px;
+    font-size: 16px;
+}
+
+.gameView{
+    font-size: 16px;
+    position: absolute;
+    right: 16px;
+    bottom: 16px;
+    color: gray;
+}
