@@ -8,7 +8,7 @@ import TopPosition from "../Modules/topPosition";
 import CommentBox from "../Modules/commentBox";
 import GameTitle from "../Atoms/gameTitle";
 
-function DetailPage({ gameResult, gameComment, gameName, description,gmaeSrc }) {
+function DetailPage({ gameResult, gameComment, gameName, description, gmaeSrc }) {
     return (
         <div>
             <div style={{ display: "flex" }}>
@@ -17,7 +17,7 @@ function DetailPage({ gameResult, gameComment, gameName, description,gmaeSrc }) 
                     <GameTitle
                         gameName={gameName}
                     />
-                    <PlayGame 
+                    <PlayGame
                         gmaeSrc={gmaeSrc}
                     />
                     <GameDescription
@@ -27,41 +27,23 @@ function DetailPage({ gameResult, gameComment, gameName, description,gmaeSrc }) 
                     <Subheading contents={"Top 3"} />
 
                     <div className={styless.topBox}>
-                        {gameResult.map((result, index) => (
-                            <div key={index}>
-                                <p>Result ID: {result.resultId}</p>
-                                <p>Game ID: {result.gameId}</p>
-                                <p>User ID: {result.userId}</p>
-                                <p>Game Score: {result.gameScore}</p>
-                            </div>
-                        ))}
-                        <TopPosition />
+                        <TopPosition
+                            first={gameResult[0]}   // 첫 번째 결과 전달
+                            second={gameResult[1]}  // 두 번째 결과 전달
+                            third={gameResult[2]}   // 세 번째 결과 전달
+                        />
                     </div>
                     <Subheading contents={"댓글"} />
                     <CommentBox />
                     <div className={styless.commentBox}>
                         {gameComment.map((result, index) => (
-                            <div key={index}>
-                                <p>Comment ID: {result.commentId}</p>
-                                <p>Game ID: {result.gameId}</p>
-                                <p>User ID: {result.userId}</p>
-                                <p>Comment Content: {result.commentContent}</p>
-                                <p>Comment Time: {result.dateTime}</p>
-                            </div>
+                            <Comment
+                                content={result.commentContent}
+                                time={result.dateTime}
+                                userId={result.userId}
+                            />
                         ))}
-                        <Comment />
-                        <Comment />
-                        <Comment />
-                        <Comment />
-                        <Comment />
-                        <Comment />
-                        <Comment />
-                        <Comment />
-                        <Comment />
-                        <Comment />
-                        <Comment />
                     </div>
-
                 </div>
             </div>
         </div>

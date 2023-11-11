@@ -1,32 +1,21 @@
+import styless from "./topPosition.module.css"
 
-function TopPosition() {
+function TopPosition({first, second, third}) {
     return (
-        <div style={{
-            display: "flex",
-            alignItems: "flex-end"
-        }}>
-            <div style={{
-                width: "125px",
-                height: "110px",
-                backgroundColor: "#CD8543",
-
-            }}>
-            </div>
-            <div style={{
-                width: "125px",
-                height: "260px",
-                backgroundColor: "#FAE772",
-            }}>
-
-            </div>
-            <div style={{
-                width: "125px",
-                height: "170px",
-                backgroundColor: "#E2E2E2",
-            }}>
-
-            </div>
+        <div className={styless.topContainer}>
+        <div className={styless.topThird}>
+            <p>User ID: {third.userId}</p>
+            <p>Game Score: {third.gameScore}</p>
         </div>
+        <div className={styless.topFirst}>
+            <p>User ID: {first.userId}</p>
+            <p>Game Score: {first.gameScore}</p>
+        </div>
+        <div className={styless.topSecond}>
+            <p>User ID: {second.userId}</p>
+            <p>Game Score: {second.gameScore}</p>
+        </div>
+    </div>
     )
 }
 

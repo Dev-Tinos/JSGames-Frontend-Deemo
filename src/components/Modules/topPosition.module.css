@@ -1,0 +1,27 @@
+.topContainer{
+    display: flex;
+    align-items: flex-end;
+}
+
+.topFirst{
+    width: 125px;
+    height: 260px;
+    background-color: #FAE772;
+    text-align: center;
+}
+
+.topSecond{
+    width: 125px;
+    height: 170px;
+    background-color: #E2E2E2;
+    text-align: center;
+
+}
+
+.topThird{
+    width: 125px;
+    height: 110px;
+    background-color: #CD8543;
+    text-align: center;
+
+}
