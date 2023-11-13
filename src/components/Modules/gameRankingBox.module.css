@@ -1,0 +1,19 @@
+.gameRankingBox{
+    position: relative;
+    margin-bottom: 24px;
+}
+
+.game_num{
+    font-size: 26px;
+    margin-left: 40px;
+}
+.game_name{
+    font-size: 26px;
+    margin-left: 158px;
+}
+
+.game_view{
+    position: absolute;
+    font-size: 26px;
+    right: 220px;
+}

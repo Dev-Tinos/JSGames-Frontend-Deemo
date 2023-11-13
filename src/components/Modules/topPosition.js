@@ -5,15 +5,15 @@ function TopPosition({first, second, third}) {
         <div className={styless.topContainer}>
         <div className={styless.topThird}>
             <p>User ID: {third.userId}</p>
-            <p>Game Score: {third.gameScore}</p>
+            <p>3등 점수: {third.gameScore}</p>
         </div>
         <div className={styless.topFirst}>
             <p>User ID: {first.userId}</p>
-            <p>Game Score: {first.gameScore}</p>
+            <p>1등 점수: {first.gameScore}</p>
         </div>
         <div className={styless.topSecond}>
             <p>User ID: {second.userId}</p>
-            <p>Game Score: {second.gameScore}</p>
+            <p>2등 점수: {second.gameScore}</p>
         </div>
     </div>
     )

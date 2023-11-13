@@ -1,5 +1,6 @@
 import styless from "./categorySelection.module.css"
 import React, { useState } from 'react';
+import GameRankingBox from "./gameRankingBox";
 
 function CategorySelection({ category1, category2, data1, data2, width, height }) {
     const [index, setIndex] = useState(1);
@@ -45,12 +46,15 @@ function CategorySelection({ category1, category2, data1, data2, width, height }
                 >
                     <div className={styless.list_box}>
                         <span className={styless.ranking_text}>순위</span>
-                        <span className={styless.profile_text}>게임 이름</span>
+                        <span className={styless.game_name}>게임 이름</span>
+                        <span className={styless.game_view}>조회수</span>
                     </div>
-                    <p>{data2.map((game) => (
-                        <div>
-                            <h3>{game.gameName}</h3>
-                        </div>
+                    <p>{data2.map((game, index) => (
+                        <GameRankingBox
+                            num={index+1}
+                            gameName={game.gameName}
+                            view={game.viewCount}
+                        />
                     ))}</p>
                 </div>
             )}

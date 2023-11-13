@@ -8,7 +8,7 @@
     border: 2px solid #B1C9F1;
     border-radius: 30px;
     margin-top: 16px;
-    padding: 20px;
+    padding: 26px;
 }
 
 .category span {
@@ -27,6 +27,7 @@
 }
 .ranking_text{
     font-size: 26px;
+    margin-left: 24px;
 }
 .profile_text{
     font-size: 26px;
@@ -39,4 +40,13 @@
 .message_text{
     font-size: 26px;
     margin-left: 200px;
+}
+.game_name{
+    font-size: 26px;
+    margin-left: 168px;
+}
+
+.game_view{
+    font-size: 26px;
+    margin-left: 220px;
 }
