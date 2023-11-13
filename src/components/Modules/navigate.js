@@ -12,6 +12,7 @@ function Navitage() {
     const clickLogOut = () => {
         localStorage.removeItem('userId');
         setLogOut(true)
+        nav('/')
     }
     useEffect(() => {
         if (logOut) {

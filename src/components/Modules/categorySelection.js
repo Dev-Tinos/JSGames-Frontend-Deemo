@@ -33,7 +33,7 @@ function CategorySelection({ category1, category2, data1, data2, width, height }
                         <span className={styless.ranking_text}>순위</span>
                         <span className={styless.profile_text}>프로필</span>
                         <span className={styless.nickname_text}>닉네임</span>
-                        <span className={styless.message_text}>상태메시지</span>
+                        <span className={styless.message_text}>업적</span>
                     </div>
                     <p>{data1}</p>
                 </div>
