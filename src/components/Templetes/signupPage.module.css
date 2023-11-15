@@ -6,6 +6,10 @@
     background-color: #FAFAFA;
     margin-top: auto;
     margin-bottom: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 
 }
 
@@ -21,13 +25,26 @@ label {
 }
 
 input {
-    width: 300px;
+    width: 400px;
+    height: 54px;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
     box-sizing: border-box;
     font-size: 16px;
     margin-top: 4px;
+}
+
+.email_input_wrapper{
+    position: relative;
+}
+
+.email_input_wrapper button{
+    position: absolute;
+    width: 126px;
+    height: 42px;
+    right: 6px;
+    bottom: 6px;
 }
 
 .submit_btn {

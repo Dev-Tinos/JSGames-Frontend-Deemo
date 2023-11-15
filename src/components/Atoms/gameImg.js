@@ -6,6 +6,9 @@ function GameImg(){
             <img src={DemoImg} alt= "gameImg" style={{
                 width: "100px",
                 height: "100px",
+                zIndex: "1",
+                
+
             }}></img>
         </div>
     )

@@ -30,6 +30,14 @@ function SignupPage() {
             })
         })
             .then(response => response.json())
+            .then(data => {
+                if (data.message === "이미 존재하는 이메일입니다.") {
+                    alert(data.message);
+                } 
+                else {
+                    alert("전송 되었습니다.");
+                }
+            })
             .catch(error => {
                 console.error("Error:", error);
             });
@@ -56,21 +64,25 @@ function SignupPage() {
                 <form onSubmit={handleSubmit} className={styless.signup_form}>
                     <div className={styless.form_group}>
                         <label className={styless.label}>이메일:</label>
-                        <input
-                            type="email"
-                            name="email"
-                            value={formData.email}
-                            onChange={handleChange}
-                            required
-                            className={styless.input}
-                        />
-                        <button
-                            onClick={handleCodeSend}
-                            className={styless.submit_btn}
-                            disabled={!formData.email}
-                        >
-                            코드 전송
-                        </button>
+                        <div className={styless.email_input_wrapper}>
+                            <input
+                                type="email"
+                                name="email"
+                                value={formData.email}
+                                onChange={handleChange}
+                                required
+                                className={styless.input}
+                                placeholder="이메일을 입력하세요"
+
+                            />
+                            <button
+                                onClick={handleCodeSend}
+                                className={styless.submit_btn}
+                                disabled={!formData.email}
+                            >
+                                코드 전송
+                            </button>
+                        </div>
                     </div>
                     <div className={styless.form_group}>
                         <label className={styless.label}>인증코드:</label>
@@ -81,6 +93,8 @@ function SignupPage() {
                             onChange={handleChange}
                             required
                             className={styless.input}
+                            placeholder="인증코드를 입력하세요"
+
                         />
                     </div>
                     <div className={styless.form_group}>
@@ -92,6 +106,7 @@ function SignupPage() {
                             onChange={handleChange}
                             required
                             className={styless.input}
+                            placeholder="비밀번호를 입력하세요"
                         />
                     </div>
                     <div className={styless.form_group}>
@@ -103,6 +118,7 @@ function SignupPage() {
                             onChange={handleChange}
                             required
                             className={styless.input}
+                            placeholder="닉네임을 입력하세요"
                         />
                     </div>
                     <div className={styless.form_group}>
@@ -114,6 +130,7 @@ function SignupPage() {
                             onChange={handleChange}
                             required
                             className={styless.input}
+                            placeholder="전공을 입력하세요"
                         />
                     </div>
                     <button type="submit" className={styless.submit_btn}>회원가입</button>

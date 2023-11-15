@@ -1,6 +1,7 @@
 import styless from "./categorySelection.module.css"
 import React, { useState } from 'react';
 import GameRankingBox from "./gameRankingBox";
+import RankingBox from "./rankingBox";
 
 function CategorySelection({ category1, category2, data1, data2, width, height }) {
     const [index, setIndex] = useState(1);
@@ -35,7 +36,12 @@ function CategorySelection({ category1, category2, data1, data2, width, height }
                         <span className={styless.nickname_text}>닉네임</span>
                         <span className={styless.message_text}>업적</span>
                     </div>
-                    <p>{data1}</p>
+                    <p>{data1.map((game, index) => (
+                        <RankingBox
+                            num={index+1}
+                            nickname = {game.userId}
+                        />
+                    ))}</p>
                 </div>
             ) : (
                 <div className={styless.informationBox}

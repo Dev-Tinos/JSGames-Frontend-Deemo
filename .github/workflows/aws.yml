@@ -24,6 +24,8 @@ jobs:
           REACT_APP_GAME_RANKING: ${{ secrets.REACT_APP_GAME_RANKING }}
           REACT_APP_CERTIFICATION: ${{ secrets.REACT_APP_CERTIFICATION }}
           REACT_APP_LOGIN: ${{ secrets.REACT_APP_LOGIN }}
+          REACT_APP_TOP100: ${{ secrets.REACT_APP_TOP100 }}
+          
         run: npm run build
         
       - name: Deploy 

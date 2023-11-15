@@ -9,7 +9,7 @@ function RankingNum({ num }) {
             alignItems: "center",
             fontSize: "36px"
         }}>
-            <p>1</p>
+            <p>{num}</p>
         </div >
     )
 }
