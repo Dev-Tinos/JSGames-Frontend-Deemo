@@ -20,6 +20,7 @@ function MainPage({ gameData }) {
                                 gameId={gameData.gameId}
                                 gameName={gameData.gameName}
                                 viewCount = {gameData.viewCount}
+                                imageUrl = {gameData.imageUrl}
                             />
                         ))}
                     </div>

@@ -4,12 +4,13 @@ import ProfileImg from "../Atoms/profileImg";
 
 import styless from "./rankingBox.module.css"
 
-function RankingBox({ num,nickname}) {
+function RankingBox({ num, nickname }) {
     return (
         <div style={{
-            display: "flex", alignItems: "center",
+            display: "flex",
             position: "relative",
-            marginBottom: "16px"
+            alignItems:"center",
+            marginBottom: "66px"
         }}>
             <span className={styless.numPosition}>
                 <RankingNum
@@ -20,11 +21,10 @@ function RankingBox({ num,nickname}) {
                 <ProfileImg />
             </span>
             <span className={styless.nicknamePosition}>
-                <Nickname 
+                <Nickname
                     nickname={nickname}
                 />
             </span>
-
         </div>
     )
 }

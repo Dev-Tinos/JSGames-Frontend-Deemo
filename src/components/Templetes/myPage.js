@@ -1,26 +1,33 @@
+import { useState } from "react";
 import Navitage from "../Modules/navigate";
-import styless from "./myPage.module.css"
+import styless from "./myPage.module.css";
+import MyProfile from "../Modules/myprofile";
+import MyRanking from "../Modules/myRanking";
 
 function RankingPage({ information }) {
+    const [isFlipped, setIsFlipped] = useState(false);
+
+    const handleFlip = () => {
+        setIsFlipped(!isFlipped);
+    };
 
     return (
         <div>
             <div style={{ display: "flex" }}>
                 <Navitage />
-                <div className={styless.profileBox}>
+                <div
+                    className={`${styless.profileBox} ${isFlipped ? styless.flipped : ""}`}
+                    onClick={handleFlip}
+                >
                     <div>
-                        <p>User ID: {information.userId}</p>
-                        <p>Nickname: {information.nickname}</p>
-                        <p>Email: {information.email}</p>
-                        <p>Password: {information.password}</p>
-                        <p>Major: {information.major}</p>
+                        <p className={isFlipped ? styless.flippedText : ""}>
+                            {isFlipped ? <MyProfile userData={information} /> : <MyRanking />}
+                        </p>
                     </div>
                 </div>
             </div>
         </div>
-    )
+    );
 }
+
 export default RankingPage;
-
-
-

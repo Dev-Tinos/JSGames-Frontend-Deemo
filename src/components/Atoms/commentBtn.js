@@ -1,5 +1,5 @@
-function CommentBtn(){
-    return(
+function CommentBtn({ onClick }) {
+    return (
         <button style={{
             width: "120px",
             height: "50px",
@@ -7,8 +7,10 @@ function CommentBtn(){
             fontSize: "16px",
             border: "2px solid #B1C9F1",
             backgroundColor: "transparent",
-            marginTop: "4px"  
-        }}>
+            marginTop: "4px"
+        }}
+            onClick={onClick}
+        >
             등록
         </button>
     )

@@ -1,15 +1,9 @@
 function RankingNum({ num }) {
     return (
-        <div style={{
-            width: "50px",
-            height: "50px",
-            borderRadius: "50%",
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            fontSize: "36px"
-        }}>
-            <p>{num}</p>
+        <div>
+            <p style={{
+                fontSize: "26px"
+            }}>{num}</p>
         </div >
     )
 }

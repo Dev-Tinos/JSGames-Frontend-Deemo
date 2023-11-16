@@ -1,11 +1,9 @@
-import DemoImg from '../../img/logo_img.png'
-
-function GameImg(){
+function GameImg({imageUrl}){
     return(
         <div>
-            <img src={DemoImg} alt= "gameImg" style={{
-                width: "100px",
-                height: "100px",
+            <img src={imageUrl} alt= "gameImg" style={{
+                width: "120px",
+                height: "120px",
                 zIndex: "1",
                 
 

@@ -2,8 +2,8 @@ function ProfileImg (){
 
     return(
         <div style={{
-            width: "73px",
-            height: "73px",
+            width: "50px",
+            height: "50px",
             borderRadius: "50%",
             backgroundColor: "#D9D9D9"
         }}>

@@ -7,8 +7,6 @@ function Detail() {
     const [gameData, setGameData] = useState('');
     const [gameResult, setGameResult] = useState([]);
     const [gameComment, setgameComment] = useState([]);
-
-
     const [isLoading, setIsLoading] = useState(true);
     useEffect(() => {
         const gameData_json = process.env.REACT_APP_GAME_DETAIL;

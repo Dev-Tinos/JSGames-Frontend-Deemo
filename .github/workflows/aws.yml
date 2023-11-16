@@ -25,6 +25,7 @@ jobs:
           REACT_APP_CERTIFICATION: ${{ secrets.REACT_APP_CERTIFICATION }}
           REACT_APP_LOGIN: ${{ secrets.REACT_APP_LOGIN }}
           REACT_APP_TOP100: ${{ secrets.REACT_APP_TOP100 }}
+          REACT_APP_SENDCOMMENT: ${{ secrets.REACT_APP_SENDCOMMENT }}
           
         run: npm run build
         

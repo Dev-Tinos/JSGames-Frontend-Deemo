@@ -1,16 +1,8 @@
-import React, { useState } from 'react';
+function CommentInput({value}) {
 
-
-function CommentInput() {
-    const [value, setValue] = useState("");
-
-    const handleChange = (e) => {
-        setValue(e.target.value);
-    };
     return (
         <textarea
             type="text"
-            onChange={handleChange}
             placeholder="댓글을 입력하세요..."
             style={{
                 width: "950px",

@@ -3,18 +3,30 @@
     align-items: flex-end;
 }
 
+.rankgincontainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .topFirst{
     width: 125px;
     height: 260px;
     background-color: #FAE772;
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 28px;
 }
 
 .topSecond{
     width: 125px;
     height: 170px;
     background-color: #E2E2E2;
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 28px;
 
 }
 
@@ -22,6 +34,9 @@
     width: 125px;
     height: 110px;
     background-color: #CD8543;
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 28px;
 
 }

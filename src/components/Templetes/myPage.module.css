@@ -1,4 +1,4 @@
-.profileBox{
+.profileBox {
     width: 1006px;
     height: 670px;
     margin-left: 42px;
@@ -9,4 +9,18 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+
+
+.profileBox {
+    transition: transform 0.5s;
+}
+
+.flipped {
+    transform: rotateY(180deg);
+}
+
+.flippedText {
+    transform: rotateY(180deg);
 }

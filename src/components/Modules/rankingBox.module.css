@@ -1,17 +1,15 @@
 .numPosition{
-    margin-left: 18px;
+    position: absolute;
+    left: 40px;
 }
 
 .imgPosition{
-    margin-left: 66px;
+    position: absolute;
+    left: 144px;
 
 }
 
 .nicknamePosition{
-    margin-left: 100px;
-}
-
-.statusPosition{
     position: absolute;
-    left: 460px;
+    left: 320px;
 }
