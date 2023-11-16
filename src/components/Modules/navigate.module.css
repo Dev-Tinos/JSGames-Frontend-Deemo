@@ -32,3 +32,16 @@
     height: 41px;
     border-radius: 15px;
 }
+
+.loginPosition{
+    margin-top: 160px;
+    margin-left: 90px;
+}
+.loginPosition img{
+    width: 34px;
+    height: 34px;
+}
+.loginPosition img:hover{
+    background-color: #F3C745;
+    border-radius: 25px;
+}

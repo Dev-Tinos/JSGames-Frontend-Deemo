@@ -3,8 +3,8 @@ import CommentBtn from "../Atoms/commentBtn"
 import CommentInput from "../Atoms/commentInput"
 import { useState } from "react";
 
-function CommentBox({gameId}) {
-    const [commentData, setCommentData] = useState();
+function CommentBox({ gameId, refreshComments }) {
+    const [commentData, setCommentData] = useState("");
 
     const handleChange = (e) => {
         setCommentData(e.target.value);
@@ -23,7 +23,10 @@ function CommentBox({gameId}) {
                     userId: 1,
                 })
             });
-            // 성공적으로 요청을 보낸 후에 필요한 작업을 수행할 수 있습니다.
+            console.log(gameId)
+            console.log(commentData)
+            setCommentData("");
+            refreshComments();
         } catch (error) {
             console.error("Error sending comment:", error);
         }

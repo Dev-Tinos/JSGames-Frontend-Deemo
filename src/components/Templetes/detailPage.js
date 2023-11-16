@@ -8,7 +8,7 @@ import TopPosition from "../Modules/topPosition";
 import CommentBox from "../Modules/commentBox";
 import GameTitle from "../Atoms/gameTitle";
 
-function DetailPage({ gameResult, gameId, gameComment, gameName, description, gmaeSrc }) {
+function DetailPage({ gameResult, gameId, gameComment, gameName, description, gmaeSrc, refreshComments }) {
     return (
         <div>
             <div style={{ display: "flex" }}>
@@ -36,6 +36,7 @@ function DetailPage({ gameResult, gameId, gameComment, gameName, description, gm
                     <Subheading contents={"댓글"} />
                     <CommentBox
                         gameId={gameId}
+                        refreshComments={refreshComments}
                     />
                     <div className={styless.commentBox}>
                         {gameComment.map((result, index) => (

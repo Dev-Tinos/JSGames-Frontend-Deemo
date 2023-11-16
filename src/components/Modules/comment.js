@@ -3,8 +3,8 @@ import moment from "moment";
 import 'moment/locale/ko'; // 한글 언어 설정을 추가합니다.
 
 function Comment({ content, userId, time }) {
-    const timestamp = time; // 'time'은 유효한 타임스탬프 문자열로 가정합니다.
-    moment.locale('ko'); // 'ko'는 한글 언어 코드입니다.
+    const timestamp = time;
+    moment.locale('ko');
     const timeAgo = moment(timestamp).fromNow();
 
     console.log(timeAgo);

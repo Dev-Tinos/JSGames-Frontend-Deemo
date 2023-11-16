@@ -1,4 +1,4 @@
-function CommentInput({value}) {
+function CommentInput({value,onChange }) {
 
     return (
         <textarea
@@ -14,6 +14,7 @@ function CommentInput({value}) {
                 border: "2px solid #B1C9F1"
             }}
             value={value}
+            onChange={onChange}
         />
     )
 }

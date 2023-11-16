@@ -13,7 +13,7 @@ function Detail() {
         const gameResult_json = process.env.REACT_APP_GAMEID_RESULT;
         const gameComment_json = process.env.REACT_APP_GAMEID_COMMENT;
         const page = 0;
-        const size = 5;
+        const size = 500;
         const fetchData = async () => {
             const response1 = await fetch(
                 `${gameData_json}/${gameId}`
@@ -36,6 +36,15 @@ function Detail() {
         }
         fetchData();
     }, [gameId]);
+    const refreshComments = async () => {
+        try {
+            const response = await fetch(`${process.env.REACT_APP_GAMEID_COMMENT}/${gameId}?page=0&size=500`);
+            const result = await response.json();
+            setgameComment(result);
+        } catch (error) {
+            console.error("Error refreshing comments:", error);
+        }
+    };
     if (isLoading) {
         return <div>Loading...</div>;
     }
@@ -48,6 +57,8 @@ function Detail() {
                 gameName={gameData.gameName}
                 description={gameData.description}
                 gmaeSrc={gameData.gameUrl}
+                refreshComments={refreshComments}
+                gameId={gameId}
             />
         </div>
     )
