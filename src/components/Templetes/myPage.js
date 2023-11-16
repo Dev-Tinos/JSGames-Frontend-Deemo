@@ -4,7 +4,7 @@ import styless from "./myPage.module.css";
 import MyProfile from "../Modules/myprofile";
 import MyRanking from "../Modules/myRanking";
 
-function RankingPage({ information }) {
+function RankingPage({ information, myRanking }) {
     const [isFlipped, setIsFlipped] = useState(false);
 
     const handleFlip = () => {
@@ -21,7 +21,7 @@ function RankingPage({ information }) {
                 >
                     <div>
                         <p className={isFlipped ? styless.flippedText : ""}>
-                            {isFlipped ? <MyProfile userData={information} /> : <MyRanking />}
+                            {isFlipped ? <MyProfile userData={information} /> : <MyRanking myRanking={myRanking} />}
                         </p>
                     </div>
                 </div>

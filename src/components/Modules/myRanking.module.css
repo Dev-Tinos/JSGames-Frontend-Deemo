@@ -1,9 +1,39 @@
 .informationBox {
-    border: 2px solid #B1C9F1;
-    border-radius: 30px;
-    margin-top: 16px;
-    padding: 26px;
-}
-.header{
+    width: 360px;
+    height: 500px;
+    border-radius: 15px;
+    border: 2px solid;
+    padding: 24px;
     
+}
+
+.gameName {
+    font-size: 24px;
+
+}
+
+.gameScore {
+    font-size: 24px;
+    margin-left: 100px;
+}
+
+.dataContainer {
+    display: flex;
+    position: relative;
+    align-items: center;
+    margin-top: 32px;
+    margin-bottom: 66px;
+}
+
+.nameText {
+    position: absolute;
+    font-size: 24px;
+    left: 32px;
+
+}
+
+.scoreText {
+    position: absolute;
+    left: 200px;
+    font-size: 24px;
 }
