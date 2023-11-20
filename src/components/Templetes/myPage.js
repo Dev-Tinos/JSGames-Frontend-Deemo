@@ -2,9 +2,9 @@ import { useState } from "react";
 import Navitage from "../Modules/navigate";
 import styless from "./myPage.module.css";
 import MyProfile from "../Modules/myprofile";
-import MyRanking from "../Modules/myRanking";
+// import MyRanking from "../Modules/myRanking";
 
-function RankingPage({ information, myRanking }) {
+function RankingPage({ information }) {
     const [isFlipped, setIsFlipped] = useState(false);
 
     const handleFlip = () => {
@@ -21,7 +21,7 @@ function RankingPage({ information, myRanking }) {
                 >
                     <div>
                         <p className={isFlipped ? styless.flippedText : ""}>
-                            {isFlipped ? <MyProfile userData={information} /> : <MyRanking myRanking={myRanking} />}
+                            {isFlipped ? <MyProfile userData={information} /> : <p>asdf</p>}
                         </p>
                     </div>
                 </div>

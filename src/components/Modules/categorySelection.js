@@ -39,7 +39,7 @@ function CategorySelection({ category1, category2, data1, data2, width, height }
                     <p>{data1.map((game, index) => (
                         <RankingBox
                             num={index+1}
-                            nickname = {game.userId}
+                            nickname = {game.user.nickname}
                         />
                     ))}</p>
                 </div>

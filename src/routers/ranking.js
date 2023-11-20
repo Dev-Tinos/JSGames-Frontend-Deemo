@@ -32,7 +32,7 @@ function Ranking() {
     return (
         <RankingPage
             gameRanking={gameRanking}
-            userRanking={userRanking}
+            userRanking={userRanking.rankList}
 
         />
     )

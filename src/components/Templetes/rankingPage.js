@@ -18,7 +18,6 @@ function RankingPage({userRanking, gameRanking}) {
                         />
                     </div>
                 </div>
-
             </div>
         </div>
     )

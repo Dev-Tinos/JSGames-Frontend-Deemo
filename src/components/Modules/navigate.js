@@ -30,7 +30,6 @@ function Navitage() {
                 <LogoImg />
             </div>
             <div className={styless.list_container}>
-                <p>List</p>
                 <ul>
                     <li onClick={() => nav('/')}>
                         홈

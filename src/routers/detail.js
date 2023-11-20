@@ -13,7 +13,7 @@ function Detail() {
         const gameResult_json = process.env.REACT_APP_GAMEID_RESULT;
         const gameComment_json = process.env.REACT_APP_GAMEID_COMMENT;
         const page = 0;
-        const size = 500;
+        const size = 5;
         const fetchData = async () => {
             const response1 = await fetch(
                 `${gameData_json}/${gameId}`
