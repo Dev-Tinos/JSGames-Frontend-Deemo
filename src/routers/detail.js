@@ -19,7 +19,7 @@ function Detail() {
                 `${gameData_json}/${gameId}`
             );
             const response2 = await fetch(
-                `${gameResult_json}/${gameId}?page=${page}&size=${size}`
+                `${gameResult_json}/${gameId}?page=0&size=${size}`
             );
             const response3 = await fetch(
                 `${gameComment_json}/${gameId}?page=${page}&size=${size}`
