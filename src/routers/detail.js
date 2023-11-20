@@ -7,13 +7,13 @@ function Detail() {
     const [gameData, setGameData] = useState('');
     const [gameResult, setGameResult] = useState([]);
     const [gameComment, setgameComment] = useState([]);
+    const [commentPage, setCommentPage] = useState(0);
     const [isLoading, setIsLoading] = useState(true);
     useEffect(() => {
         const gameData_json = process.env.REACT_APP_GAME_DETAIL;
         const gameResult_json = process.env.REACT_APP_GAMEID_RESULT;
         const gameComment_json = process.env.REACT_APP_GAMEID_COMMENT;
-        const page = 0;
-        const size = 5;
+        const size = 10;
         const fetchData = async () => {
             const response1 = await fetch(
                 `${gameData_json}/${gameId}`
@@ -22,7 +22,7 @@ function Detail() {
                 `${gameResult_json}/${gameId}?page=0&size=${size}`
             );
             const response3 = await fetch(
-                `${gameComment_json}/${gameId}?page=${page}&size=${size}`
+                `${gameComment_json}/${gameId}?page=${commentPage}&size=${size}`
             );
             const result1 = await response1.json();
             const result2 = await response2.json();
@@ -35,16 +35,36 @@ function Detail() {
             setIsLoading(false);
         }
         fetchData();
-    }, [gameId]);
+    }, [gameId, commentPage]);
     const refreshComments = async () => {
         try {
-            const response = await fetch(`${process.env.REACT_APP_GAMEID_COMMENT}/${gameId}?page=0&size=500`);
+            const response = await fetch(`${process.env.REACT_APP_GAMEID_COMMENT}/${gameId}?page=0&size=10`);
             const result = await response.json();
             setgameComment(result);
         } catch (error) {
             console.error("Error refreshing comments:", error);
         }
     };
+
+    const handleCommentScroll = () => {
+        const windowHeight = "innerHeight" in window ? window.innerHeight : document.documentElement.offsetHeight;
+        const body = document.body;
+        const html = document.documentElement;
+        const docHeight = Math.max(body.scrollHeight, body.offsetHeight, html.clientHeight, html.scrollHeight, html.offsetHeight);
+        const windowBottom = windowHeight + window.pageYOffset;
+    
+        if (windowBottom >= docHeight - 10) {
+            setCommentPage((prevPage) => prevPage + 1);
+        }
+    };
+    
+    useEffect(() => {
+        window.addEventListener("scroll", handleCommentScroll);
+        return () => {
+            window.removeEventListener("scroll", handleCommentScroll);
+        };
+    }, []);
+
     if (isLoading) {
         return <div>Loading...</div>;
     }
