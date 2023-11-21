@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import MainPage from "../components/Templetes/mainPage";
+import MainSkeleton from "../skeleton/mainSkeletion";
 
 function Main() {
     const [data, setData] = useState([]);
@@ -52,7 +53,7 @@ function Main() {
     }, []);
 
     if (isLoading) {
-        return <div>Loading...</div>;
+        return <div><MainSkeleton /></div>;
     }
 
     return (

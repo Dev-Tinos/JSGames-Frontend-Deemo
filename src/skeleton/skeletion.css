@@ -1,0 +1,46 @@
+.SearchBox {
+    width: 540px;
+    height: 70px;
+    background-color: #fafafa;
+
+}
+
+.navBox {
+    width: 300px;
+    height: 920px;
+    border-radius: 15px;
+    background-color: #FAFAFA;
+    position: sticky;
+    padding: 48px 30px 0 30px;
+    top: 4%;
+}
+
+.bannerBox {
+    margin-top: 109px;
+    margin-left: 42px;
+    width: 1006px;
+    height: 300px;
+    border-radius: 15px;
+    background-color: #fafafa;
+
+}
+.game_container {
+    margin-top: 35px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 42px;
+    margin-left: 42px;
+}
+
+.gamebox{
+    width: 220px;
+    height: 220px;
+    border-radius: 15px;
+    background-color: #FAFAFA;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+    color: black;
+}
