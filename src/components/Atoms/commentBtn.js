@@ -1,4 +1,4 @@
-function CommentBtn({ onClick }) {
+function CommentBtn({ onClick, disabled }) {
     return (
         <button style={{
             width: "120px",
@@ -9,6 +9,7 @@ function CommentBtn({ onClick }) {
             backgroundColor: "transparent",
             marginTop: "4px"
         }}
+            disabled={disabled}
             onClick={onClick}
         >
             등록

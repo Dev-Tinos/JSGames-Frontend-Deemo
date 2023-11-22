@@ -44,3 +44,30 @@
     padding: 15px;
     color: black;
 }
+
+.bannerBox {
+    margin-top: 109px;
+    margin-left: 42px;
+    width: 1006px;
+    height: 300px;
+    border-radius: 15px;
+    background-color: #fafafa;
+
+}
+
+.gameScreen{
+    width: 1006px;
+    height: 624px;
+    background-color: #FAFAFA;
+    border-radius: 15px;
+    margin-left: 42px;
+    margin-top: 52px;
+}
+.description{
+    width: 1006px;
+    height: 200px;
+    background-color: #FAFAFA;
+    border-radius: 15px;
+    margin-left: 42px;
+    margin-top: 52px;
+}

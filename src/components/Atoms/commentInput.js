@@ -1,4 +1,4 @@
-function CommentInput({value,onChange }) {
+function CommentInput({value,onChange, disabled }) {
 
     return (
         <textarea
@@ -15,6 +15,8 @@ function CommentInput({value,onChange }) {
             }}
             value={value}
             onChange={onChange}
+            disabled={disabled}
+
         />
     )
 }

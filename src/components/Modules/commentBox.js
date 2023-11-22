@@ -1,11 +1,17 @@
 import styless from "./commentBox.module.css"
 import CommentBtn from "../Atoms/commentBtn"
 import CommentInput from "../Atoms/commentInput"
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 function CommentBox({ gameId, refreshComments }) {
     const [commentData, setCommentData] = useState("");
+    const [userId, setUserId] = useState(null);
 
+    useEffect(() => {
+        // 로컬스토리지에서 userId 가져오기
+        const storedUserId = localStorage.getItem("userId");
+        setUserId(storedUserId);
+    }, []);
     const handleChange = (e) => {
         setCommentData(e.target.value);
     };
@@ -20,7 +26,7 @@ function CommentBox({ gameId, refreshComments }) {
                 body: JSON.stringify({
                     commentContent: commentData,
                     gameId: gameId,
-                    userId: 1,
+                    userId: userId,
                 })
             });
             console.log(gameId)
@@ -36,9 +42,12 @@ function CommentBox({ gameId, refreshComments }) {
             <CommentInput
                 onChange={handleChange}
                 value={commentData}
+                disabled={!userId}
+
             />
             <CommentBtn
                 onClick={sendComment}
+                disabled={!userId}
             />
         </div>
     )

@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import DetailPage from "../components/Templetes/detailPage"
+import DetailSkeleton from "../skeleton/detailSkeltion";
 
 function Detail() {
     const { gameId } = useParams(); // URL의 gameId 파라미터를 가져옵니다.
@@ -66,7 +67,7 @@ function Detail() {
     }, []);
 
     if (isLoading) {
-        return <div>Loading...</div>;
+        return <div><DetailSkeleton /></div>;
     }
 
     return (
