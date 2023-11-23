@@ -1,27 +1,29 @@
 import styless from "./topPosition.module.css"
-import ProfileImg from "../Atoms/profileImg";
+import ScoreContainer from "./scoreContainer";
+import { useState, useEffect } from "react";
 
-function TopPosition({ first, second, third }) {
+
+function TopPosition({ gameResult, userId, myScore }) {
+
     return (
         <div className={styless.topContainer}>
-            <div className={styless.rankgincontainer}>
-                <ProfileImg />
-                <div className={styless.topThird}>
-                    <p>{third.gameScore} 점</p>
-                </div>
-            </div>
-            <div className={styless.rankgincontainer}>
-                <ProfileImg />
-                <div className={styless.topFirst}>
-                    <p>{first.gameScore} 점</p>
-                </div>
-            </div>
-            <div className={styless.rankgincontainer}>
-                <ProfileImg />
-                <div className={styless.topSecond}>
-                    <p>{second.gameScore} 점</p>
-                </div>
-            </div>
+            {userId ? <ScoreContainer
+                num={"내 점수"}
+                // name={myScore.gameId}
+                // scroe={myScore.gameScore}
+            />
+                : <ScoreContainer
+                    num={"NULL"}
+                    name={"NULL"}
+                    scroe={"NULL"}
+                />}
+            {gameResult.map((result, index) => (
+                <ScoreContainer
+                    num={index + 1}
+                    name={result.user.nickname}
+                    scroe={result.gameScore}
+                />
+            ))}
         </div>
     )
 }

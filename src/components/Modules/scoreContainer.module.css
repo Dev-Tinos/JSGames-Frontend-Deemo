@@ -1,0 +1,47 @@
+.scoreContainer {
+    width: 222px;
+    height: 246px;
+    border: 1px solid #B1C9F1;
+    border-radius: 8px;
+    margin-left: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.rankingPostion {
+    width: 220px;
+    height: 45px;
+    border-bottom: 1px solid #B1C9F1;
+    color: #000;
+    padding: 16px 10px 12px 10px;
+    text-align: center;
+}
+
+.rankingPostion p {
+    font-size: 14px;
+    line-height: 16px;
+}
+
+.nicknamePostion {
+    position: absolute;
+    top: 66px;
+
+}
+
+.profilePostion {
+    width: 60px;
+    height: 60px;
+    border: 1px solid;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 82px;
+
+}
+
+.scorePostion {
+    font-size: 24px;
+    position: absolute;
+    bottom: 24px;
+}

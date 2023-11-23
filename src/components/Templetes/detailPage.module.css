@@ -2,7 +2,9 @@
     margin-left: 42px;
     width: 1006px;
 }
-
+.nav_container {
+    z-index: 9999;
+}
 .commentBox{
     width: 1006px;
     background-color: #FAFAFA;

@@ -1,17 +1,10 @@
 import styless from "./commentBox.module.css"
 import CommentBtn from "../Atoms/commentBtn"
 import CommentInput from "../Atoms/commentInput"
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
-function CommentBox({ gameId, refreshComments }) {
+function CommentBox({ gameId, refreshComments, userId}) {
     const [commentData, setCommentData] = useState("");
-    const [userId, setUserId] = useState(null);
-
-    useEffect(() => {
-        // 로컬스토리지에서 userId 가져오기
-        const storedUserId = localStorage.getItem("userId");
-        setUserId(storedUserId);
-    }, []);
     const handleChange = (e) => {
         setCommentData(e.target.value);
     };

@@ -11,7 +11,9 @@
     align-items: center;
 }
 
-
+.nav_container {
+    z-index: 9999;
+}
 .profileBox {
     transition: transform 0.5s;
 }

@@ -6,8 +6,6 @@ function Comment({ content, userId, time }) {
     const timestamp = time;
     moment.locale('ko');
     const timeAgo = moment(timestamp).fromNow();
-
-    console.log(timeAgo);
     return (
         <div className={styless.comment_box}>
             <div className={styless.comment_header}>

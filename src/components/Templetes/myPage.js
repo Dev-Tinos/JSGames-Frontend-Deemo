@@ -14,7 +14,9 @@ function RankingPage({ information }) {
     return (
         <div>
             <div style={{ display: "flex" }}>
-                <Navitage />
+                <div className={styless.nav_container}>
+                    <Navitage />
+                </div>
                 <div
                     className={`${styless.profileBox} ${isFlipped ? styless.flipped : ""}`}
                     onClick={handleFlip}

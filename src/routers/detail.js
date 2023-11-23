@@ -10,6 +10,13 @@ function Detail() {
     const [gameComment, setgameComment] = useState([]);
     const [commentPage, setCommentPage] = useState(0);
     const [isLoading, setIsLoading] = useState(true);
+    const [userId, setUserId] = useState(null);
+
+    useEffect(() => {
+        const storedUserId = localStorage.getItem("userId");
+        setUserId(storedUserId);
+    }, []);
+
     useEffect(() => {
         const gameData_json = process.env.REACT_APP_GAME_DETAIL;
         const gameResult_json = process.env.REACT_APP_GAMEID_RESULT;
@@ -25,6 +32,9 @@ function Detail() {
             const response3 = await fetch(
                 `${gameComment_json}/${gameId}?page=0&size=${size}`
             );
+            // const response4 = await fetch(
+            //     `${myScore_json}/${gameId}/user/${userId}`
+            // );
             const result1 = await response1.json();
             const result2 = await response2.json();
             const result3 = await response3.json();
@@ -99,6 +109,7 @@ function Detail() {
                 gmaeSrc={gameData.gameUrl}
                 refreshComments={refreshComments}
                 gameId={gameId}
+                userId={userId}
             />
         </div>
     )

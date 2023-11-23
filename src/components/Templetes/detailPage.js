@@ -8,11 +8,13 @@ import TopPosition from "../Modules/topPosition";
 import CommentBox from "../Modules/commentBox";
 import GameTitle from "../Atoms/gameTitle";
 
-function DetailPage({ gameResult, gameId, gameComment, gameName, description, gmaeSrc, refreshComments }) {
+function DetailPage({ gameResult, gameId, gameComment, gameName, description, gmaeSrc, refreshComments, userId, myScore }) {
     return (
         <div>
             <div style={{ display: "flex" }}>
-                <Navitage />
+                <div className={styless.nav_container}>
+                    <Navitage />
+                </div>
                 <div className={styless.game_position}>
                     <GameTitle
                         gameName={gameName}
@@ -28,15 +30,16 @@ function DetailPage({ gameResult, gameId, gameComment, gameName, description, gm
 
                     <div className={styless.topBox}>
                         <TopPosition
-                            first={gameResult[0]}   // 첫 번째 결과 전달
-                            second={gameResult[1]}  // 두 번째 결과 전달
-                            third={gameResult[2]}   // 세 번째 결과 전달
+                            gameResult={gameResult}
+                            userId={userId}
+                            myScore={myScore}
                         />
                     </div>
                     <Subheading contents={"댓글"} />
                     <CommentBox
                         gameId={gameId}
                         refreshComments={refreshComments}
+                        userId={userId}
                     />
                     <div className={styless.commentBox}>
                         {gameComment.map((result, index) => (
