@@ -1,5 +1,6 @@
 import MyPage from "../components/Templetes/myPage"
 import { useEffect, useState } from "react";
+import ProfileSkeltion from "../skeleton/profileSkeltion";
 
 function Profile() {
     const [userData, setuserData] = useState('');
@@ -28,7 +29,7 @@ function Profile() {
         fetchData();
     }, []);
     if (isLoading) {
-        return <div>Loading...</div>;
+        return <div><ProfileSkeltion /> </div>;
     }
     return (
         <div>

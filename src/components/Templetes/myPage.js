@@ -5,7 +5,7 @@ import MyProfile from "../Modules/myprofile";
 // import MyRanking from "../Modules/myRanking";
 
 function RankingPage({ information }) {
-    const [isFlipped, setIsFlipped] = useState(false);
+    const [isFlipped, setIsFlipped] = useState(true);
 
     const handleFlip = () => {
         setIsFlipped(!isFlipped);

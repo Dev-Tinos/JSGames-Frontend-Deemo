@@ -11,7 +11,9 @@ function MainPage({ gameData }) {
                 <div className={styless.searchBox_position}>
                     <Searchbox />
                 </div>
-                <Navitage />
+                <div className={styless.nav_container}>
+                    <Navitage />
+                </div>
                 <div className={styless.banner_position}>
                     <Banner />
                     <div className={styless.game_container}>
@@ -19,8 +21,8 @@ function MainPage({ gameData }) {
                             <GameBox
                                 gameId={gameData.gameId}
                                 gameName={gameData.gameName}
-                                viewCount = {gameData.viewCount}
-                                imageUrl = {gameData.imageUrl}
+                                viewCount={gameData.viewCount}
+                                imageUrl={gameData.imageUrl}
                             />
                         ))}
                     </div>

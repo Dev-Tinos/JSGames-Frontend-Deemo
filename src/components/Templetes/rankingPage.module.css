@@ -1,7 +1,9 @@
 .contain_position{
     margin-left: 42px;
 }
-
+.nav_container {
+    z-index: 9999;
+}
 .ranking_box{
     width: 1006px;
     min-height: 920px;

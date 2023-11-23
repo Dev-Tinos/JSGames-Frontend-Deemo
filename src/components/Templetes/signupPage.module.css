@@ -13,6 +13,10 @@
 
 }
 
+.nav_container {
+    z-index: 9999;
+}
+
 .form_group {
     margin-bottom: 20px;
     text-align: left;
@@ -35,11 +39,11 @@ input {
     margin-top: 4px;
 }
 
-.email_input_wrapper{
+.email_input_wrapper {
     position: relative;
 }
 
-.email_input_wrapper button{
+.email_input_wrapper button {
     position: absolute;
     width: 126px;
     height: 42px;

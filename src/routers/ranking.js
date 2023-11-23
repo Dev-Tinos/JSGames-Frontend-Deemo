@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import RankingPage from "../components/Templetes/rankingPage"
+import RankingSkeltion from "../skeleton/rankingSkeltion";
 
 function Ranking() {
     const [gameRanking, setgameRanking] = useState([]);
@@ -10,7 +11,7 @@ function Ranking() {
         const gameData = process.env.REACT_APP_GAME_RANKING;
         const TopData = process.env.REACT_APP_TOP100;
         const page = 0;
-        const size = 3;
+        const size = 10;
         const fetchData = async () => {
             const response1 = await fetch(
                 `${gameData}?page=${page}&size=${size}`
@@ -27,7 +28,7 @@ function Ranking() {
         fetchData();
     }, []);
     if (isLoading) {
-        return <div>Loading...</div>;
+        return <div><RankingSkeltion /> </div>;
     }
     return (
         <RankingPage

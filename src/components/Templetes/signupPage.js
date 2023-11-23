@@ -33,7 +33,7 @@ function SignupPage() {
             .then(data => {
                 if (data.message === "이미 존재하는 이메일입니다.") {
                     alert(data.message);
-                } 
+                }
                 else {
                     alert("전송 되었습니다.");
                 }
@@ -60,8 +60,9 @@ function SignupPage() {
     return (
         <div>
             <div style={{ display: "flex" }}>
-                <Navitage />
-                <form onSubmit={handleSubmit} className={styless.signup_form}>
+                <div className={styless.nav_container}>
+                    <Navitage />
+                </div>                <form onSubmit={handleSubmit} className={styless.signup_form}>
                     <div className={styless.form_group}>
                         <label className={styless.label}>이메일:</label>
                         <div className={styless.email_input_wrapper}>

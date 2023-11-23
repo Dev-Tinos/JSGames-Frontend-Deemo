@@ -1,13 +1,20 @@
-
-
-.searchBox_position{
-    left: 336px;
-    position: relative;
+.nav_container {
+    z-index: 9999;
 }
 
-.banner_position{
+.searchBox_position {
+    left: 336px;
+    position: relative;
+    z-index: 1;
+
+}
+
+.banner_position {
     margin-top: 109px;
     margin-left: 42px;
+    position: relative;
+    z-index: 2;
+
 }
 
 .game_container {
@@ -17,4 +24,7 @@
     flex-direction: row;
     flex-wrap: wrap;
     gap: 42px;
+    position: relative;
+    z-index: 3;
+
 }

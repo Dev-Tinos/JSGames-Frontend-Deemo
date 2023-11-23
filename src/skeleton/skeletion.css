@@ -24,6 +24,7 @@
     background-color: #fafafa;
 
 }
+
 .game_container {
     margin-top: 35px;
     width: 100%;
@@ -33,7 +34,7 @@
     margin-left: 42px;
 }
 
-.gamebox{
+.gamebox {
     width: 220px;
     height: 220px;
     border-radius: 15px;
@@ -55,7 +56,7 @@
 
 }
 
-.gameScreen{
+.gameScreen {
     width: 1006px;
     height: 624px;
     background-color: #FAFAFA;
@@ -63,11 +64,45 @@
     margin-left: 42px;
     margin-top: 52px;
 }
-.description{
+
+
+.rankingScreen{
+    width: 1006px;
+    height: 920px;
+    background-color: #FAFAFA;
+    border-radius: 15px;
+    margin-left: 42px;
+    padding: 26px;
+}
+.description {
     width: 1006px;
     height: 200px;
     background-color: #FAFAFA;
     border-radius: 15px;
     margin-left: 42px;
     margin-top: 52px;
+}
+
+.list_box {
+    margin-bottom: 48px;
+}
+
+.ranking_text {
+    font-size: 26px;
+    margin-left: 24px;
+}
+
+.profile_text {
+    font-size: 26px;
+    margin-left: 66px;
+}
+
+.nickname_text {
+    font-size: 26px;
+    margin-left: 92px;
+}
+
+.message_text {
+    font-size: 26px;
+    margin-left: 200px;
 }
