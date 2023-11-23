@@ -1,6 +1,5 @@
 import styless from "./topPosition.module.css"
 import ScoreContainer from "./scoreContainer";
-import { useState, useEffect } from "react";
 
 
 function TopPosition({ gameResult, userId, myScore }) {
