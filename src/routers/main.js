@@ -6,6 +6,7 @@ function Main() {
     const [data, setData] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
     const [page, setPage] = useState(0);
+    const [loadingMore, setLoadingMore] = useState(false);
 
     useEffect(() => {
         const fetchData = async () => {
@@ -16,12 +17,17 @@ function Main() {
                 const result = await response.json();
                 setData((prevData) => [...prevData, ...result]);
                 setIsLoading(false);
+                setLoadingMore(false);
+
             } catch (error) {
                 console.error("Error fetching data:", error);
             }
         };
-        fetchData();
-    }, [page]);
+        if (!loadingMore) {
+            fetchData();
+            setLoadingMore(true);
+        }    
+    }, [page,loadingMore]);
 
     const handleScroll = () => {
         const windowHeight =
