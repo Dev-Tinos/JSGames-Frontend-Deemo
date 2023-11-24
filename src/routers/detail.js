@@ -32,9 +32,6 @@ function Detail() {
             const response3 = await fetch(
                 `${gameComment_json}/${gameId}?page=0&size=${size}`
             );
-            // const response4 = await fetch(
-            //     `${myScore_json}/${gameId}/user/${userId}`
-            // );
             const result1 = await response1.json();
             const result2 = await response2.json();
             const result3 = await response3.json();
