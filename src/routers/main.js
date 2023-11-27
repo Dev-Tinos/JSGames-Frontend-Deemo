@@ -26,7 +26,7 @@ function Main() {
             fetchData();
             setLoadingMore(true);
         }    
-    }, [size]);
+    }, [size, loadingMore]);
 
     const handleScroll = () => {
         const windowHeight =

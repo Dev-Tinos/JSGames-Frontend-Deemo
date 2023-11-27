@@ -57,7 +57,7 @@ function Detail() {
             fetchData();
         }
 
-    }, [commentSize]);
+    }, [commentSize, gameId, loadingMore]);
 
     const refreshComments = async () => {
         try {
