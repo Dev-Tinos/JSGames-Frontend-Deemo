@@ -8,7 +8,7 @@ function Detail() {
     const [gameData, setGameData] = useState('');
     const [gameResult, setGameResult] = useState([]);
     const [gameComment, setgameComment] = useState([]);
-    const [commentPage, setCommentPage] = useState(0);
+    const [commentSize, setCommentSize] = useState(2);
     const [isLoading, setIsLoading] = useState(true);
     const [userId, setUserId] = useState(null);
     // const [loadingMore, setLoadingMore] = useState(false);
@@ -45,16 +45,15 @@ function Detail() {
     },[gameId]);
     useEffect(() => {
         const gameComment_json = process.env.REACT_APP_GAMEID_COMMENT;
-        const size = 3;
         const fetchData = async () => {
             const response3 = await fetch(
-                `${gameComment_json}/${gameId}?page=${commentPage}&size=${size}`
+                `${gameComment_json}/${gameId}?page=0&size=${commentSize}`
             );
             const result3 = await response3.json();
             setgameComment(result3)
         }
         fetchData();
-    },[gameId, commentPage]);
+    },[commentSize]);
 
     const refreshComments = async () => {
         try {
@@ -64,7 +63,6 @@ function Detail() {
         } catch (error) {
             console.error("Error refreshing comments:", error);
         }
-
     };
 
     const handleCommentScroll = () => {
@@ -84,7 +82,7 @@ function Detail() {
         const windowBottom = windowHeight + window.pageYOffset;
 
         if (windowBottom >= docHeight - 10) {
-            setCommentPage((prevPage) => prevPage + 1);
+            setCommentSize((prevSize) => prevSize + 1);
         }
         
     };

@@ -106,3 +106,55 @@
     font-size: 26px;
     margin-left: 200px;
 }
+.category span {
+    font-size: 24px;
+    margin-right: 6px;
+}
+
+.informationBox {
+    min-height: 780px;
+    border: 2px solid #B1C9F1;
+    border-radius: 30px;
+    margin-top: 16px;
+    padding: 26px;
+}
+
+.category span {
+    color: gray;
+    cursor: pointer;
+    padding: 5px;
+    transition: color 0.3s;
+}
+
+.category .selected {
+    color: #B1C9F1;
+}
+
+.list_box{
+    margin-bottom: 48px;
+}
+.ranking_text{
+    font-size: 26px;
+    margin-left: 24px;
+}
+.profile_text{
+    font-size: 26px;
+    margin-left: 66px;
+}
+.nickname_text{
+    font-size: 26px;
+    margin-left: 92px;
+}
+.message_text{
+    font-size: 26px;
+    margin-left: 200px;
+}
+.game_name{
+    font-size: 26px;
+    margin-left: 168px;
+}
+
+.game_view{
+    font-size: 26px;
+    margin-left: 220px;
+}

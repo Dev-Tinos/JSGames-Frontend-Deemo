@@ -5,17 +5,16 @@ import MainSkeleton from "../skeleton/mainSkeletion";
 function Main() {
     const [data, setData] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
-    const [page, setPage] = useState(0);
+    const [size, setSize] = useState(4);
     const [loadingMore, setLoadingMore] = useState(false);
 
     useEffect(() => {
         const fetchData = async () => {
             try {
                 const gameData = process.env.REACT_APP_GAME_CONTROLLER;
-                const size = 8;
-                const response = await fetch(`${gameData}?page=${page}&size=${size}`);
+                const response = await fetch(`${gameData}?page=0&size=${size}`);
                 const result = await response.json();
-                setData((prevData) => [...prevData, ...result]);
+                setData(result); // 누적되지 않도록 변경
                 setIsLoading(false);
                 setLoadingMore(false);
 
@@ -27,7 +26,7 @@ function Main() {
             fetchData();
             setLoadingMore(true);
         }    
-    }, [page,loadingMore]);
+    }, [size]);
 
     const handleScroll = () => {
         const windowHeight =
@@ -46,7 +45,7 @@ function Main() {
         const windowBottom = windowHeight + window.pageYOffset;
 
         if (windowBottom >= docHeight - 10) {
-            setPage((prevPage) => prevPage + 1);
+            setSize((prevSize) => prevSize + 4);
         }
         
     };
