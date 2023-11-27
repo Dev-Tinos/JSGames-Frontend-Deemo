@@ -11,7 +11,7 @@ function Detail() {
     const [commentSize, setCommentSize] = useState(2);
     const [isLoading, setIsLoading] = useState(true);
     const [userId, setUserId] = useState(null);
-    // const [loadingMore, setLoadingMore] = useState(false);
+    const [loadingMore, setLoadingMore] = useState(false);
 
     useEffect(() => {
         const storedUserId = localStorage.getItem("userId");
@@ -42,18 +42,22 @@ function Detail() {
             setIsLoading(false);
         }
         fetchData();
-    },[gameId]);
+    }, [gameId]);
     useEffect(() => {
-        const gameComment_json = process.env.REACT_APP_GAMEID_COMMENT;
-        const fetchData = async () => {
-            const response3 = await fetch(
-                `${gameComment_json}/${gameId}?page=0&size=${commentSize}`
-            );
-            const result3 = await response3.json();
-            setgameComment(result3)
+        if (loadingMore) {
+            const gameComment_json = process.env.REACT_APP_GAMEID_COMMENT;
+            const fetchData = async () => {
+                const response3 = await fetch(
+                    `${gameComment_json}/${gameId}?page=0&size=${commentSize}`
+                );
+                const result3 = await response3.json();
+                setgameComment(result3)
+                setLoadingMore(false);
+            }
+            fetchData();
         }
-        fetchData();
-    },[commentSize]);
+
+    }, [commentSize]);
 
     const refreshComments = async () => {
         try {
@@ -83,8 +87,9 @@ function Detail() {
 
         if (windowBottom >= docHeight - 10) {
             setCommentSize((prevSize) => prevSize + 1);
+            setLoadingMore(true)
         }
-        
+
     };
     useEffect(() => {
         window.addEventListener("scroll", handleCommentScroll);

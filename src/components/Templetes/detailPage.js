@@ -44,9 +44,9 @@ function DetailPage({ gameResult, gameId, gameComment, gameName, description, gm
                     <div className={styless.commentBox}>
                         {gameComment.map((result, index) => (
                             <Comment
-                                content={result.commentContent}
+                                content={result.reviewContent}
                                 time={result.dateTime}
-                                userId={result.userId}
+                                userId={result.user.nickname}
                             />
                         ))}
                     </div>
