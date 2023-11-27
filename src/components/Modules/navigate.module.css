@@ -32,7 +32,12 @@
     height: 41px;
     border-radius: 15px;
 }
-
+.list_container li:hover{
+    background-color: #F3C745;
+    width: 240px;
+    height: 41px;
+    border-radius: 15px;
+}
 .loginPosition{
     margin-top: 130px;
     margin-left: 90px;
@@ -41,7 +46,12 @@
     width: 34px;
     height: 34px;
 }
-.loginPosition img:hover{
+.loginPosition .logInHover img:hover{
     background-color: #F3C745;
     border-radius: 25px;
 }
+
+.loginPosition .logOutHover img:hover{
+    background-color: #F3C745;
+}
+

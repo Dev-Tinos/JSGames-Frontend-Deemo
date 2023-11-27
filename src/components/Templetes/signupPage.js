@@ -62,7 +62,8 @@ function SignupPage() {
             <div style={{ display: "flex" }}>
                 <div className={styless.nav_container}>
                     <Navitage />
-                </div>                <form onSubmit={handleSubmit} className={styless.signup_form}>
+                </div>                
+                <form onSubmit={handleSubmit} className={styless.signup_form}>
                     <div className={styless.form_group}>
                         <label className={styless.label}>이메일:</label>
                         <div className={styless.email_input_wrapper}>

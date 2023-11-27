@@ -11,6 +11,7 @@ function Detail() {
     const [commentPage, setCommentPage] = useState(0);
     const [isLoading, setIsLoading] = useState(true);
     const [userId, setUserId] = useState(null);
+    // const [loadingMore, setLoadingMore] = useState(false);
 
     useEffect(() => {
         const storedUserId = localStorage.getItem("userId");
@@ -54,6 +55,7 @@ function Detail() {
         }
         fetchData();
     },[gameId, commentPage]);
+
     const refreshComments = async () => {
         try {
             const response = await fetch(`${process.env.REACT_APP_GAMEID_COMMENT}/${gameId}?page=0&size=10`);
@@ -62,6 +64,7 @@ function Detail() {
         } catch (error) {
             console.error("Error refreshing comments:", error);
         }
+
     };
 
     const handleCommentScroll = () => {

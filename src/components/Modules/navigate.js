@@ -2,7 +2,6 @@ import { useNavigate } from "react-router-dom"
 import styless from "./navigate.module.css"
 import LogoImg from "../Atoms/logoImg";
 import React, { useState, useEffect } from 'react';
-import LoginPage from "../Templetes/loginPage";
 import loginImg from '../../img/icons8-login.png';
 import logoutImg from '../../img/icons8-logout.png';
 
@@ -10,7 +9,6 @@ import logoutImg from '../../img/icons8-logout.png';
 
 function Navitage() {
     const nav = useNavigate();
-    const [isLoginOpen, setLoginOpen] = useState(false);
     const [logOut, setLogOut] = useState(false)
     const userId = localStorage.getItem('userId')
     const clickLogOut = () => {
@@ -49,18 +47,16 @@ function Navitage() {
                 </ul>
                 <div className={styless.loginPosition}>
                     {userId ? (
-                        <span onClick={clickLogOut}>
+                        <span onClick={clickLogOut} className={styless.logOutHover}>
                             <img src={logoutImg} alt="로그아웃 아이콘"></img>
                         </span>
                     ) : (
-                        <span onClick={() => setLoginOpen(true)}>
+                        <span onClick={() => nav('/login')} className={styless.logInHover}>
                             <img src={loginImg} alt="로그인 아이콘"></img>
-
                         </span>
                     )}
                 </div>
             </div>
-            <LoginPage isOpen={isLoginOpen} onClose={() => setLoginOpen(false)} />
 
         </div>
     )
