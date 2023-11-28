@@ -72,7 +72,7 @@
     background-color: #FAFAFA;
     border-radius: 15px;
     margin-left: 42px;
-    padding: 26px;
+    padding: 54px;
 }
 .description {
     width: 1006px;
@@ -158,3 +158,43 @@
     font-size: 26px;
     margin-left: 220px;
 }
+
+.profileBox {
+    width: 1006px;
+    height: 670px;
+    margin-left: 42px;
+    border-radius: 15px;
+    background-color: #FAFAFA;
+    margin-top: 130px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+/* ㅁㄴㅇ */
+.game_position{
+    margin-left: 42px;
+    width: 1006px;
+}
+.nav_container {
+    z-index: 9999;
+}
+.commentBox{
+    width: 1006px;
+    background-color: #FAFAFA;
+    border-radius: 15px;
+    padding-top: 5px;
+}
+
+.topBox{
+    width: 1006px;
+    height: 500px;
+    background-color: #FAFAFA;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+

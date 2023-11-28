@@ -9,7 +9,7 @@ const ProfileSkeltion = () => {
 
             </div>
             <div>
-                <div className='bannerBox'>
+                <div className='profileBox'>
                 </div>
             </div>
         </div>
