@@ -14,7 +14,7 @@ function Main() {
                 const gameData = process.env.REACT_APP_GAME_CONTROLLER;
                 const response = await fetch(`${gameData}?page=0&size=${size}`);
                 const result = await response.json();
-                setData(result); // 누적되지 않도록 변경
+                setData(result)
                 setIsLoading(false);
                 setLoadingMore(false);
 
@@ -22,40 +22,40 @@ function Main() {
                 console.error("Error fetching data:", error);
             }
         };
-        if (!loadingMore) {
-            fetchData();
-            setLoadingMore(true);
-        }    
-    }, [size, loadingMore]);
 
-    const handleScroll = () => {
-        const windowHeight =
-            "innerHeight" in window
-                ? window.innerHeight
-                : document.documentElement.offsetHeight;
-        const body = document.body;
-        const html = document.documentElement;
-        const docHeight = Math.max(
-            body.scrollHeight,
-            body.offsetHeight,
-            html.clientHeight,
-            html.scrollHeight,
-            html.offsetHeight
-        );
-        const windowBottom = windowHeight + window.pageYOffset;
+        const handleScroll = () => {
+            const windowHeight =
+                "innerHeight" in window
+                    ? window.innerHeight
+                    : document.documentElement.offsetHeight;
+            const body = document.body;
+            const html = document.documentElement;
+            const docHeight = Math.max(
+                body.scrollHeight,
+                body.offsetHeight,
+                html.clientHeight,
+                html.scrollHeight,
+                html.offsetHeight
+            );
+            const windowBottom = windowHeight + window.pageYOffset;
 
-        if (windowBottom >= docHeight - 10) {
-            setSize((prevSize) => prevSize + 4);
-        }
-        
-    };
+            // 스크롤이 아래로 내려갔을 때 한 번만 호출
+            if (windowBottom >= docHeight - 10 && !loadingMore) {
+                setLoadingMore(true);
+                setSize((prevSize) => prevSize + 4);
+            }
+        };
 
-    useEffect(() => {
         window.addEventListener("scroll", handleScroll);
+
+        if (loadingMore) {
+            fetchData();
+        }
+
         return () => {
             window.removeEventListener("scroll", handleScroll);
         };
-    }, []);
+    }, [size, loadingMore]);
 
     if (isLoading) {
         return <div><MainSkeleton /></div>;
