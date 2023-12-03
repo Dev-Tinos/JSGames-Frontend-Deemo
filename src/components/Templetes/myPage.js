@@ -4,12 +4,8 @@ import styless from "./myPage.module.css";
 import MyProfile from "../Modules/myprofile";
 // import MyRanking from "../Modules/myRanking";
 
-function RankingPage({ information }) {
-    const [isFlipped, setIsFlipped] = useState(true);
+function RankingPage({ information, myList }) {
 
-    const handleFlip = () => {
-        setIsFlipped(!isFlipped);
-    };
 
     return (
         <div>
@@ -17,14 +13,17 @@ function RankingPage({ information }) {
                 <div className={styless.nav_container}>
                     <Navitage />
                 </div>
-                <div
-                    className={`${styless.profileBox} ${isFlipped ? styless.flipped : ""}`}
-                    onClick={handleFlip}
-                >
+                <div className={styless.profileBox}>
                     <div>
-                        <p className={isFlipped ? styless.flippedText : ""}>
-                            {isFlipped ? <MyProfile userData={information} /> : <p>asdf</p>}
-                        </p>
+                        <MyProfile userData={information} />
+                    </div>
+                    <h2 className={styless.game_record_title}>Play List</h2>
+                    <div className={styless.game_record}>
+                        <div>
+                            <span>게임 이름</span>
+                            {console.log(myList)}
+                        </div>
+
                     </div>
                 </div>
             </div>

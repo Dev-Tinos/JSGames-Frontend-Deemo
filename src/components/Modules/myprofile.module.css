@@ -6,7 +6,7 @@
     width: 360px;
     height: 200px;
     border-radius: 15px;
-    border: 2px solid;
+
 }
 
 .profileSize {
@@ -22,6 +22,5 @@
 .nickName{
     font-size: 24px;
     margin-bottom: 8px;
-
 }
 

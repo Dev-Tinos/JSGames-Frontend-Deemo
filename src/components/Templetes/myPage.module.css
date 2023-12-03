@@ -1,27 +1,29 @@
 .profileBox {
     width: 1006px;
-    height: 670px;
+    height: 920px;
     margin-left: 42px;
     border-radius: 15px;
     background-color: #FAFAFA;
     margin-top: auto;
     margin-bottom: auto;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    padding: 42px 0 0 32px;
+    flex-direction: column;
 }
 
 .nav_container {
     z-index: 9999;
 }
-.profileBox {
-    transition: transform 0.5s;
+.game_record_title{
+    margin-left:44px;
+    margin-top: 24px;
+    font-size: 28px;
 }
-
-.flipped {
-    transform: rotateY(180deg);
-}
-
-.flippedText {
-    transform: rotateY(180deg);
+.game_record{
+    width: 900px;
+    height: 580px;
+    border: 2px solid;
+    margin-left: 24px;
+    margin-top: 12px;
+    border-radius: 15px;
 }

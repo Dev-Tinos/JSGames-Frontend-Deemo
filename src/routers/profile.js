@@ -4,26 +4,26 @@ import ProfileSkeltion from "../skeleton/profileSkeltion";
 
 function Profile() {
     const [userData, setuserData] = useState('');
-    // const [myRanking, setMyRanking] = useState([]);
+    const [myList, setMyList] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
         const myProfile = process.env.REACT_APP_USERID;
-        // const myRanking = process.env.REACT_APP_MYRANKING;
+        const myList = process.env.REACT_APP_MYGAMELIST;
         const userId = localStorage.getItem('userId');
-        // const page = 0;
-        // const size = 5;
+        const page = 0;
+        const size = 5;
         const fetchData = async () => {
             const response1 = await fetch(
                 `${myProfile}/${userId}`
             );
-            // const response2 = await fetch(
-            //     `${myRanking}/${userId}?page=${page}&size=${size}`
-            // );
+            const response2 = await fetch(
+                `${myList}/${userId}?page=${page}&size=${size}`
+            );
             const result1 = await response1.json();
-            // const result2 = await response2.json();
+            const result2 = await response2.json();
             setuserData(result1)
-            // setMyRanking(result2)
+            setMyList(result2)
             setIsLoading(false);
         }
         fetchData();
@@ -35,7 +35,7 @@ function Profile() {
         <div>
             <MyPage
                 information={userData}
-                // myRanking={myRanking}
+                myList={myList}
             />
         </div>
     )
