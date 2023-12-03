@@ -1,4 +1,3 @@
-import { useState } from "react";
 import Navitage from "../Modules/navigate";
 import styless from "./myPage.module.css";
 import MyProfile from "../Modules/myprofile";
