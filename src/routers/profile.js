@@ -12,7 +12,7 @@ function Profile() {
         const myList = process.env.REACT_APP_MYGAMELIST;
         const userId = localStorage.getItem('userId');
         const page = 0;
-        const size = 5;
+        const size = 7;
         const fetchData = async () => {
             const response1 = await fetch(
                 `${myProfile}/${userId}`

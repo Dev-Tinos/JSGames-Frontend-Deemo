@@ -1,6 +1,7 @@
 import Navitage from "../Modules/navigate";
 import styless from "./myPage.module.css";
 import MyProfile from "../Modules/myprofile";
+import GameRankingBox from "../Modules/gameRankingBox"
 // import MyRanking from "../Modules/myRanking";
 
 function RankingPage({ information, myList }) {
@@ -19,8 +20,18 @@ function RankingPage({ information, myList }) {
                     <h2 className={styless.game_record_title}>Play List</h2>
                     <div className={styless.game_record}>
                         <div>
-                            <span>게임 이름</span>
-                            {console.log(myList)}
+                            <div className={styless.list_box}>
+                                <span className={styless.ranking_text}>정보</span>
+                                <span className={styless.game_name}>게임 이름</span>
+                                <span className={styless.game_category}>게임 유형</span>
+                            </div>
+                            <p>{myList.map((game, index) => (
+                                <GameRankingBox
+                                    num={index + 1}
+                                    gameName={game.gameName}
+                                    view={game.scoreType}
+                                />
+                            ))}</p>
                         </div>
 
                     </div>
