@@ -23,6 +23,8 @@ function Main() {
             }
         };
 
+        fetchData();
+
         const handleScroll = () => {
             const windowHeight =
                 "innerHeight" in window
