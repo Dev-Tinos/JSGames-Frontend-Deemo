@@ -8,6 +8,7 @@
     border: 2px solid #B1C9F1;
     border-radius: 30px;
     margin-top: 16px;
+    position: relative;
     padding: 26px;
 }
 
@@ -23,30 +24,41 @@
 }
 
 .list_box{
-    margin-bottom: 48px;
+    margin-bottom: 68px;
 }
+
+
 .ranking_text{
     font-size: 26px;
-    margin-left: 24px;
+    position: absolute;
+    left: 50px;
 }
 .profile_text{
     font-size: 26px;
-    margin-left: 66px;
+    position: absolute;
+    left: 158px;
 }
 .nickname_text{
     font-size: 26px;
-    margin-left: 92px;
+    position: absolute;
+    left: 320px;
 }
 .message_text{
     font-size: 26px;
-    margin-left: 200px;
+    position: absolute;
+    right: 250px;
 }
+
+
 .game_name{
     font-size: 26px;
-    margin-left: 168px;
+    position: absolute;
+    left: 260px;
 }
 
 .game_view{
     font-size: 26px;
-    margin-left: 220px;
+    position: absolute;
+    right: 220px;
+
 }

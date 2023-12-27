@@ -5,7 +5,7 @@ import MainSkeleton from "../skeleton/mainSkeletion";
 function Main() {
     const [data, setData] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
-    const [size, setSize] = useState(4);
+    const [size, setSize] = useState(12);
     const [loadingMore, setLoadingMore] = useState(false);
 
     useEffect(() => {

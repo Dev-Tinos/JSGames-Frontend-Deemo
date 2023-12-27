@@ -11,6 +11,9 @@
     height: 65px;
     border-bottom: #6CB7F8 1px solid;
 }
+.comment_box:last-child{
+    border-bottom: none
+}
 .comment_header {
     display: flex;
     align-items: center;

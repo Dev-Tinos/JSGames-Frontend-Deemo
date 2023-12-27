@@ -5,7 +5,6 @@ function GameImg({imageUrl}){
                 width: "120px",
                 height: "120px",
                 zIndex: "1",
-                
 
             }}></img>
         </div>
