@@ -1,0 +1,25 @@
+.majorRankingBox{
+    position: relative;
+    margin-bottom: 66px;
+    display: flex;
+    align-items: center;
+}
+
+.major_num{
+    position: absolute;
+    font-size: 26px;
+    left: 40px;
+}
+.major_name{
+    position: absolute;
+    font-size: 26px;
+    left: 230px;
+
+}
+
+.major_weight{
+    position: absolute;
+    font-size: 26px;
+    right: 190px;
+
+}

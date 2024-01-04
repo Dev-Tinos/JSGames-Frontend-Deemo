@@ -2,7 +2,7 @@ import Navitage from "../Modules/navigate";
 import styless from "./rankingPage.module.css"
 import CategorySelection from "../Modules/categorySelection";
 
-function RankingPage({ userRanking, gameRanking }) {
+function RankingPage({ userRanking, gameRanking, majorRanking }) {
     return (
         <div>
             <div style={{ display: "flex" }}>
@@ -14,8 +14,10 @@ function RankingPage({ userRanking, gameRanking }) {
                         <CategorySelection
                             category1="사용자 랭킹"
                             category2="게임 랭킹"
+                            category3="학과별 랭킹"
                             data1={userRanking}
                             data2={gameRanking}
+                            data3={majorRanking}
                             width="880"
                         />
                     </div>

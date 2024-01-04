@@ -42,6 +42,7 @@ function DetailPage({ gameResult, gameId, gameComment, gameName, description, gm
                                 content={myReview.reviewContent}
                                 time={myReview.dateTime}
                                 userId={myReview.user.nickname}
+                                star={myReview.star}
 
                             />
                         </div>
@@ -60,6 +61,7 @@ function DetailPage({ gameResult, gameId, gameComment, gameName, description, gm
                                 content={result.reviewContent}
                                 time={result.dateTime}
                                 userId={result.user.nickname}
+                                star={result.star}
                             />
                         ))}
                     </div>

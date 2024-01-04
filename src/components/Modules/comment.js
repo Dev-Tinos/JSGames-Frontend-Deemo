@@ -2,7 +2,7 @@ import styless from "./comment.module.css"
 import moment from "moment";
 import 'moment/locale/ko'; // 한글 언어 설정을 추가합니다.
 
-function Comment({ content, userId, time }) {
+function Comment({ content, userId, time,star }) {
     const timestamp = time;
     moment.locale('ko');
     const timeAgo = moment(timestamp).fromNow();
@@ -16,7 +16,18 @@ function Comment({ content, userId, time }) {
                 <div>{timeAgo}</div>
                 <div className={styless.delete_button}>삭제</div>
             </div>
+            <div>
+                <span class="material-symbols-outlined">
+                    star
+                </span>
+                <span>
+                    {star}
+                </span>
+            </div>
+        
+
             <div className={styless.comment_contents}>{content}</div>
+
         </div>
     )
 }

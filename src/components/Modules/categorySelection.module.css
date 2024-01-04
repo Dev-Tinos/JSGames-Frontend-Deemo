@@ -53,12 +53,17 @@
 .game_name{
     font-size: 26px;
     position: absolute;
-    left: 260px;
+    left: 240px;
 }
 
 .game_view{
     font-size: 26px;
     position: absolute;
-    right: 220px;
+    right: 228px;
+}
 
+.major_text{
+    font-size: 26px;
+    position: absolute;
+    left: 340px;
 }

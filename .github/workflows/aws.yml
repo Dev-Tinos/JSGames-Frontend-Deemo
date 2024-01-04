@@ -29,6 +29,7 @@ jobs:
           REACT_APP_MYRANKING: ${{ secrets.REACT_APP_MYRANKING }}
           REACT_APP_MYGAMELIST: ${{ secrets.REACT_APP_MYGAMELIST }}
           REACT_APP_MYREVIEW: ${{ secrets.REACT_APP_MYREVIEW }}
+          REACT_APP_MAJOR_RANK: ${{ secrets.REACT_APP_MAJOR_RANK }}
         run: npm run build
         
       - name: Deploy 
