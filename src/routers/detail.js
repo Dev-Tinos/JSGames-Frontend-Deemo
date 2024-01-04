@@ -12,6 +12,10 @@ function Detail() {
     const [isLoading, setIsLoading] = useState(true);
     const [userId, setUserId] = useState(null);
     const [loadingMore, setLoadingMore] = useState(false);
+    const [myReview, setMyReview] = useState()
+
+
+
 
     useEffect(() => {
         const storedUserId = localStorage.getItem("userId");
@@ -22,6 +26,9 @@ function Detail() {
         const gameData_json = process.env.REACT_APP_GAME_DETAIL;
         const gameResult_json = process.env.REACT_APP_GAMEID_RESULT;
         const gameComment_json = process.env.REACT_APP_GAMEID_COMMENT;
+        const myReview_json = process.env.REACT_APP_MYREVIEW;
+
+
         const size = 3;
         const fetchData = async () => {
             const response1 = await fetch(
@@ -33,16 +40,28 @@ function Detail() {
             const response3 = await fetch(
                 `${gameComment_json}/${gameId}?page=0&size=${size}`
             );
+            const response4 =await fetch(
+                `${myReview_json}/${gameId}/user/${userId}`
+            );
+
             const result1 = await response1.json();
             const result2 = await response2.json();
             const result3 = await response3.json();
-            setGameData(result1)
-            setGameResult(result2)
-            setgameComment(result3)
+            const result4 = await response4.json();
+            console.log(result4)
+            if (result4.message === '존재하지 않는 유저입니다.') {
+                setMyReview(null)
+            } else {
+                setMyReview(result4);
+            }
+            setGameData(result1);
+            setGameResult(result2);
+            setgameComment(result3);
             setIsLoading(false);
         }
         fetchData();
-    }, [gameId]);
+
+    }, [gameId, userId]);
     useEffect(() => {
         if (loadingMore) {
             const gameComment_json = process.env.REACT_APP_GAMEID_COMMENT;
@@ -84,12 +103,10 @@ function Detail() {
             html.offsetHeight
         );
         const windowBottom = windowHeight + window.pageYOffset;
-
         if (windowBottom >= docHeight - 10) {
             setCommentSize((prevSize) => prevSize + 1);
             setLoadingMore(true)
         }
-
     };
     useEffect(() => {
         window.addEventListener("scroll", handleCommentScroll);
@@ -113,6 +130,7 @@ function Detail() {
                 refreshComments={refreshComments}
                 gameId={gameId}
                 userId={userId}
+                myReview={myReview}
             />
         </div>
     )
