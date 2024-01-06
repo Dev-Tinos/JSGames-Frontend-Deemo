@@ -8,7 +8,7 @@ function Detail() {
     const [gameData, setGameData] = useState('');
     const [gameResult, setGameResult] = useState([]);
     const [gameComment, setgameComment] = useState([]);
-    const [commentSize, setCommentSize] = useState(2);
+    const [page, setPage] = useState(2);
     const [isLoading, setIsLoading] = useState(true);
     const [userId, setUserId] = useState(null);
     const [loadingMore, setLoadingMore] = useState(false);
@@ -40,20 +40,24 @@ function Detail() {
             const response3 = await fetch(
                 `${gameComment_json}/${gameId}?page=0&size=${size}`
             );
-            const response4 =await fetch(
-                `${myReview_json}/${gameId}/user/${userId}`
-            );
+            if(myReview_json){
+                const response4 =await fetch(
+                    `${myReview_json}/${gameId}/user/${userId}`
+                );
+                if(!response4.ok){
+                    setMyReview(null);
+                }
+                else{
+                    const result4 = await response4.json();
+                    setMyReview(result4);
+                }
+            }
+            
 
             const result1 = await response1.json();
             const result2 = await response2.json();
             const result3 = await response3.json();
-            const result4 = await response4.json();
-            console.log(result4)
-            if (result4.message === '존재하지 않는 유저입니다.') {
-                setMyReview(null)
-            } else {
-                setMyReview(result4);
-            }
+
             setGameData(result1);
             setGameResult(result2);
             setgameComment(result3);
@@ -67,16 +71,16 @@ function Detail() {
             const gameComment_json = process.env.REACT_APP_GAMEID_COMMENT;
             const fetchData = async () => {
                 const response3 = await fetch(
-                    `${gameComment_json}/${gameId}?page=0&size=${commentSize}`
+                    `${gameComment_json}/${gameId}?page=${page}&size=4&sort=RECENT`
                 );
                 const result3 = await response3.json();
-                setgameComment(result3)
+                setgameComment(prevData => [...prevData, ...result3]);
                 setLoadingMore(false);
             }
             fetchData();
         }
 
-    }, [commentSize, gameId, loadingMore]);
+    }, [page, gameId, loadingMore]);
 
     const refreshComments = async () => {
         try {
@@ -104,7 +108,7 @@ function Detail() {
         );
         const windowBottom = windowHeight + window.pageYOffset;
         if (windowBottom >= docHeight - 10) {
-            setCommentSize((prevSize) => prevSize + 1);
+            setPage((prevSize) => prevSize + 1);
             setLoadingMore(true)
         }
     };

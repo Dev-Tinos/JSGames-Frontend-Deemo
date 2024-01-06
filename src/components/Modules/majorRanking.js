@@ -9,5 +9,4 @@ function MajorRanking({num, major, rankWeight}){
         </div>
     )
 }
-
 export default MajorRanking

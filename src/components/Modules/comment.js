@@ -1,20 +1,23 @@
 import styless from "./comment.module.css"
 import moment from "moment";
-import 'moment/locale/ko'; // 한글 언어 설정을 추가합니다.
+import 'moment/locale/ko';
+import ProfileImg from "../Atoms/profileImg";
 
-function Comment({ content, userId, time,star }) {
+function Comment({ content, userId, time, star }) {
     const timestamp = time;
     moment.locale('ko');
     const timeAgo = moment(timestamp).fromNow();
     return (
         <div className={styless.comment_box}>
             <div className={styless.comment_header}>
-                <div className="material-symbols-outlined" style={{ fontSize: '23px', color: '#6CB7F8', marginRight: "10px" }}>
-                    account_circle
+                <div>
+                    <ProfileImg />
                 </div>
-                <div className={styless.comment_nickname}>{userId}</div>
-                <div>{timeAgo}</div>
-                <div className={styless.delete_button}>삭제</div>
+                <div>
+                    <div className={styless.comment_nickname}>{userId}</div>
+                    <div className={styless.time_postion}>{timeAgo}</div>
+                    <div className={styless.delete_button}>삭제</div>
+                </div>
             </div>
             <div>
                 <span class="material-symbols-outlined">
@@ -24,10 +27,7 @@ function Comment({ content, userId, time,star }) {
                     {star}
                 </span>
             </div>
-        
-
             <div className={styless.comment_contents}>{content}</div>
-
         </div>
     )
 }

@@ -36,7 +36,13 @@ function DetailPage({ gameResult, gameId, gameComment, gameName, description, gm
                         />
                     </div>
                     <Subheading contents={"댓글"} />
-                    {myReview ? (
+                    {myReview === null ? (
+                        <CommentBox
+                            gameId={gameId}
+                            refreshComments={refreshComments}
+                            userId={userId}
+                        />
+                    ) : (
                         <div className={styless.myCommentBox}>
                             <Comment
                                 content={myReview.reviewContent}
@@ -46,15 +52,8 @@ function DetailPage({ gameResult, gameId, gameComment, gameName, description, gm
 
                             />
                         </div>
-
-                    ) : (
-                        <CommentBox
-                            gameId={gameId}
-                            refreshComments={refreshComments}
-                            userId={userId}
-                        />
                     )}
-                    
+
                     <div className={styless.commentBox}>
                         {gameComment.map((result, index) => (
                             <Comment
