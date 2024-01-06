@@ -1,6 +1,5 @@
 .comment_box {
     display: flex;
-    justify-content: center;
     padding: 5px 20px;
     width: 100%;
     height: 65px;
@@ -11,30 +10,45 @@
 .comment_box:last-child{
     border-bottom: none
 }
+
 .comment_header {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    width: 100%;
 }
 
-.material-symbols-outlined {
-    margin-right: 10px;
+.comment_nickname, .material-symbols-outlined, .comment_star {
+    font-size: 14px; 
+    display: flex;
+    align-items: center;
+    
 }
+
+.comment_star {
+    display: inline-flex; 
+    align-items: center;
+    margin-left: 10px; 
+}
+
+/* 별 모양 아이콘을 위한 스타일 */
+.material-symbols-outlined {
+    font-variant: small-caps;
+    font-size: inherit;
+}
+
 
 .comment_nickname {
-    font-size: 10px;
     color: #333333;
+    margin-left: 16px;
 }
 
 .comment_contents {
-    font-size: 12px;
+    font-size: 20px;
     color: #ADAAAA;
-    margin-left: 5px;
+    margin-left: 16px;
     color: #333333;
     margin-top: 5px;
-}
 
+}
 .delete_button {
     font-size: 10px;
     color: #FF0000;
@@ -48,4 +62,8 @@
     font-size: 16px;
     right: 20px;
     bottom: 12px;
+}
+
+.star_postion{
+
 }

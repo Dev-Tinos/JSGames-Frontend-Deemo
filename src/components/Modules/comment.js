@@ -14,20 +14,23 @@ function Comment({ content, userId, time, star }) {
                     <ProfileImg />
                 </div>
                 <div>
-                    <div className={styless.comment_nickname}>{userId}</div>
-                    <div className={styless.time_postion}>{timeAgo}</div>
-                    <div className={styless.delete_button}>삭제</div>
+                    <div style={{display: "flex"}}>
+                        <div className={styless.comment_nickname}>{userId}</div>
+                        <div className={styless.comment_star}>
+                        <span className="material-symbols-outlined">star</span>
+                        <span>{star}</span>
+                    </div>
+                    </div>
+                    <div className={styless.comment_contents}>{content}</div>
                 </div>
+                <div className={styless.time_postion}>{timeAgo}</div>
+                <div className={styless.star_postion}>
+
+                </div>
+
+                <div className={styless.delete_button}>삭제</div>
             </div>
-            <div>
-                <span class="material-symbols-outlined">
-                    star
-                </span>
-                <span>
-                    {star}
-                </span>
-            </div>
-            <div className={styless.comment_contents}>{content}</div>
+
         </div>
     )
 }
