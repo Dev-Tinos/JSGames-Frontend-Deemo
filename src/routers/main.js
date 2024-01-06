@@ -8,48 +8,48 @@ function Main() {
     const [page, setPage] = useState(0);
     const [loadingMore, setLoadingMore] = useState(false);
 
-    const fetchData = async () => {
-        try {
-            const gameData = process.env.REACT_APP_GAME_CONTROLLER;
-            const response = await fetch(`${gameData}?page=${page}&size=8&sort=LOG_COUNT`);
-            const result = await response.json();
-            setData(prevData => [...prevData, ...result]);
-            setIsLoading(false);
-            setLoadingMore(false); // 데이터 로딩이 완료되었음을 표시
-        } catch (error) {
-            console.error("Error fetching data:", error);
+    useEffect(() => {
+        async function fetchData() {
+            try {
+                const gameData = process.env.REACT_APP_GAME_CONTROLLER;
+                const response = await fetch(`${gameData}?page=${page}&size=8&sort=LOG_COUNT`);
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                const result = await response.json();
+                setData(prevData => [...prevData, ...result]);
+                setIsLoading(false);
+            } catch (error) {
+                console.error("Error fetching data:", error);
+            }
         }
-    };
+
+        fetchData();
+    }, [page]);
 
     useEffect(() => {
-        fetchData(); // 컴포넌트 마운트 시 초기 데이터 로드
-    }, []);
+        function handleScroll() {
+            const windowHeight = "innerHeight" in window ? window.innerHeight : document.documentElement.offsetHeight;
+            const body = document.body;
+            const html = document.documentElement;
+            const docHeight = Math.max(body.scrollHeight, body.offsetHeight, html.clientHeight, html.scrollHeight, html.offsetHeight);
+            const windowBottom = windowHeight + window.pageYOffset;
 
-    const handleScroll = () => {
-        const windowHeight = "innerHeight" in window ? window.innerHeight : document.documentElement.offsetHeight;
-        const body = document.body;
-        const html = document.documentElement;
-        const docHeight = Math.max(body.scrollHeight, body.offsetHeight, html.clientHeight, html.scrollHeight, html.offsetHeight);
-        const windowBottom = windowHeight + window.pageYOffset;
-
-        if (windowBottom >= docHeight - 10 && !loadingMore) {
-            setLoadingMore(true);
-            setPage(prevPage => prevPage + 1);
+            if (windowBottom >= docHeight - 10 && !loadingMore) {
+                setLoadingMore(true);
+            }
         }
-    };
 
-    useEffect(() => {
         window.addEventListener("scroll", handleScroll);
-        return () => {
-            window.removeEventListener("scroll", handleScroll);
-        };
+        return () => window.removeEventListener("scroll", handleScroll);
     }, [loadingMore]);
 
     useEffect(() => {
         if (loadingMore && !isLoading) {
-            fetchData();
+            setPage(prevPage => prevPage + 1);
+            setLoadingMore(false);
         }
-    }, [page, loadingMore]);
+    }, [loadingMore, isLoading]);
 
     if (isLoading) {
         return <MainSkeleton />;
