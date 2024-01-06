@@ -53,7 +53,6 @@ function Detail() {
                 }
             }
             
-
             const result1 = await response1.json();
             const result2 = await response2.json();
             const result3 = await response3.json();
@@ -90,6 +89,7 @@ function Detail() {
         } catch (error) {
             console.error("Error refreshing comments:", error);
         }
+        
     };
 
     const handleCommentScroll = () => {

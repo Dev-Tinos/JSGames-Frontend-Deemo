@@ -2,10 +2,12 @@ import styless from "./commentBox.module.css"
 import CommentBtn from "../Atoms/commentBtn"
 import CommentInput from "../Atoms/commentInput"
 import { useState } from "react";
+import StarRating from "./starRating";
 
 function CommentBox({ gameId, refreshComments, userId }) {
     const [commentData, setCommentData] = useState("");
-    const [isSendingComment, setIsSendingComment] = useState(false); // 댓글 전송 중 여부
+    const [rating, setRating] = useState(null);
+    const [isSendingComment, setIsSendingComment] = useState(false);
     const handleChange = (e) => {
         setCommentData(e.target.value);
     };
@@ -26,6 +28,7 @@ function CommentBox({ gameId, refreshComments, userId }) {
                     reviewContent: commentData,
                     gameId: gameId,
                     userId: userId,
+                    star: rating,
                 })
             });
             alert("완료!!")
@@ -51,10 +54,29 @@ function CommentBox({ gameId, refreshComments, userId }) {
                 disabled={!userId}
 
             />
-            <CommentBtn
-                onClick={sendComment}
-                disabled={!userId || isSendingComment}
-            />
+            <div style={{ display: "flex" }}>
+
+                <div style={{
+                    marginLeft: "20px",
+                    marginTop: "12px"
+                }}>
+                    <StarRating rating={rating} setRating={setRating} />
+
+
+                </div>
+
+                <div style={{
+                    position: "absolute",
+                    right: "22px"
+                }}>
+                    <CommentBtn
+                        onClick={sendComment}
+                        disabled={!userId || isSendingComment}
+                    />
+                </div>
+
+            </div>
+
         </div>
     )
 
